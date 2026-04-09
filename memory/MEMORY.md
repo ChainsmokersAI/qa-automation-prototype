@@ -5,9 +5,10 @@
 
 ## 프로젝트 현황
 
-- 상태: Learn + Generate 단계 구현 완료
+- 상태: Learn + Generate 단계 구현 완료, learn-context 웹 리서치 확장 완료
 - QA 대상 챗봇: 미정
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases` skills
+- 최근 변경: learn-context Step 2b 웹 리서치를 3-Phase 구조로 확장 (Issues만 → context 전 항목 커버), Step 1에 서비스명/소개 요청 추가, CLAUDE.md knowledge/ 섹션 연동 업데이트, knowledge/index.md Phase별 카테고리화
 - 미구현: 서브에이전트 (TC 리뷰 등)
 
 ## 다음 세션 할 일
@@ -26,6 +27,7 @@
 - context/는 memory/와 분리 — 챗봇 정보(context/)와 에이전트 경험(memory/)은 성격이 다름
 - @ import는 세션 시작 시 전체 내용을 인라인 로딩함 — 항상 로딩해야 하는 파일에만 사용
 - task-log.md처럼 계속 커지는 파일은 @import 대신 on-demand 읽기
+- 작업 완료 후 메모리 업데이트는 PM이 말하기 전에 에이전트가 먼저 제안해야 한다
 
 ## 사용자 핵심 선호
 
