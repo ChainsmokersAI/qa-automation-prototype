@@ -2,6 +2,27 @@
 
 <!-- 최신 작업이 위로 오도록 기록 -->
 
+## [2026-04-10] /learn-context 3대 규칙 준수 강화
+
+- **요청**: 다른 브랜치 테스트 중 반복 발생한 3가지 문제 개선 — (1) API Spec을 공개 개발 문서에서 웹 추정, (2) 웹 검색 결과를 [추출]로 오분류, (3) Sources를 하단 References 스타일로 나열
+- **접근**: Plan 모드로 설계 → 6개 수정 항목을 CLAUDE.md + learn-context/SKILL.md + lessons-learned.md에 적용
+- **결과**:
+  - CLAUDE.md: context/ 파일 규칙을 inline 표기 + 경로 prefix 기반 판정 원칙으로 재작성
+  - SKILL.md Step 1: PM 세션 발언을 `inputs/pm-notes-{YYYYMMDD}.md`로 파일화하는 절차 추가
+  - SKILL.md Step 2b Phase 2: "API Spec 웹 리서치 절대 금지" 경고 박스 승격
+  - SKILL.md 공통 규칙: "API Spec 예외" + "knowledge/ = [추측] 원칙" 명시
+  - SKILL.md Step 3: 출처 태그 판정 규칙 + 자주 발생하는 오분류 금지 사례 블록
+  - SKILL.md Step 5: 하단 Sources 섹션 금지, inline 표기 예시 추가
+- **주요 결정**:
+  - 판정 기준을 "권위성"에서 "출처 경로 prefix"로 전환 → 공식 자료여도 knowledge/ 참조면 무조건 [추측]
+  - API Spec은 "먼저 제안하라" 원칙의 유일한 예외 → PM 미제공 시 "미수집"으로 비워둠
+  - PM 세션 발언도 파일화해야 [추출] 자격 → 추적 가능성 확보
+- **PM 피드백 반영**:
+  - lessons-learned에 추가했던 3건(API Spec/오분류/Sources)은 애매하다 판단 → 제거
+  - CLAUDE.md가 200줄 초과(203줄) → 181줄로 compact (context/ 파일 규칙 섹션 축약)
+  - "CLAUDE.md 200줄 이내 엄수" 원칙을 새 교훈으로 기록
+- **교훈**: CLAUDE.md에 규칙을 추가할 때 장황한 부연설명·중복 예시를 피하고 핵심 판정 기준만 남긴다. 상세 사례는 SKILL.md로 이관
+
 ## [2026-04-10] run-simulation 스킬 + 파이프라인 고도화
 
 - **요청**: 시뮬레이션 실행 스킬 생성 + 관련 전반 개선

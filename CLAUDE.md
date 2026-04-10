@@ -84,17 +84,17 @@ Learn 단계에서 수집하지 못한 항목은 Run 단계 시작 시 PM에게 
 
 ### context/ 파일 규칙
 
-- 각 파일의 모든 정보에는 출처를 명시한다:
-  - **[추출]**: `inputs/`에서 직접 추출한 정보. 출처 파일 경로 명시
-  - **[추측]**: `knowledge/`의 웹 검색 결과를 기반으로 추론한 정보. 출처 파일 경로 명시
-- 파일 하단에 반드시 `## Sources` 섹션을 두어 근거를 추적할 수 있도록 한다
-- `inputs/` 내용이 변경되면, 관련된 context/ 파일도 반드시 갱신한다
+- **inline 출처 태그 필수**: 각 정보 항목 옆에 `[추출: inputs/경로]` 또는 `[추측: knowledge/경로]`를 바로 붙인다. 파일 하단 `## Sources` 섹션(논문 References 스타일) 금지.
+- **[추출]**: PM이 직접 제공한 정보만. `inputs/` 파일 또는 PM 세션 발언(반드시 `inputs/pm-notes-{YYYYMMDD}.md`로 파일화 후 참조).
+- **[추측]**: 웹에서 얻은 모든 정보. 공식 웹사이트·보도자료·인터뷰도 모두 포함 — 권위성 무관, 공식 자료도 outdated 가능하고 PM 확인 필수이기 때문.
+- **판정 원칙**: 출처 경로 prefix가 `inputs/`이면 [추출], `knowledge/`이면 [추측]. 예외 없음.
+- `inputs/` 내용이 변경되면 관련 context/ 파일도 갱신한다.
 
+예시:
 ```markdown
-## Sources 작성 예시
-- [추출] [PRD v1.2](../inputs/prd-v1.2.md) — 챗봇 정체성, 핵심 기능
-- [추출] [고객 여정 맵](../inputs/customer-journey-map.md) — 유저 플로우
-- [추측] [이커머스 CS봇 고객 불만 분석](../knowledge/ecommerce-cs-complaints.md) — 범위 밖 영역, 이슈
+- 서비스명: 카카오톡 채널 챗봇 [추출: inputs/prd-v1.2.md]
+- 유형: 이커머스 CS 챗봇 [추출: inputs/pm-notes-20260410.md]
+- 시장 포지셔닝: 국내 메신저 1위 CS 플랫폼 [추측: knowledge/identity-kakao-channel.md]
 ```
 
 ---

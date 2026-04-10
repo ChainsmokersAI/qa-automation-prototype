@@ -8,7 +8,7 @@
 - 상태: Learn + Generate + Run 단계 구현 완료
 - QA 대상 챗봇: 미정
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation` skills
-- 최근 변경: CLAUDE.md에 QA 파이프라인 섹션 추가, API Endpoint → API Spec 리네임 + 충분성 기준 정의, TC 포맷 멀티턴 지원, `/run-simulation` 스킬 신규 생성, outputs/index.md 시뮬레이션 섹션 추가
+- 최근 변경: `/learn-context` 3대 규칙 준수 강화 — inline 출처 태그 + 경로 prefix 기반 [추출]/[추측] 판정 + API Spec 웹 리서치 금지 경고 박스 + PM 세션 발언의 `inputs/pm-notes-*.md` 파일화. CLAUDE.md는 181줄로 compact화
 - 미구현: `/evaluate-results` 스킬, 서브에이전트 (TC 리뷰 등)
 
 ## 다음 세션 할 일
@@ -26,6 +26,7 @@
 - @ import는 세션 시작 시 전체 내용을 인라인 로딩함 — 항상 로딩해야 하는 파일에만 사용
 - task-log.md처럼 계속 커지는 파일은 @import 대신 on-demand 읽기
 - 작업 완료 후 메모리 업데이트는 PM이 말하기 전에 에이전트가 먼저 제안해야 한다
+- **CLAUDE.md는 200줄 이내 엄수** — 핵심 판정 기준만 남기고 부연설명·중복 예시는 SKILL.md로 이관
 
 ## 사용자 핵심 선호
 
