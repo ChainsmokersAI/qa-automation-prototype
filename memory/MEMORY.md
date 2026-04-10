@@ -5,22 +5,20 @@
 
 ## 프로젝트 현황
 
-- 상태: Learn + Generate 단계 구현 완료, learn-context 웹 리서치 확장 완료
+- 상태: Learn + Generate + Run 단계 구현 완료
 - QA 대상 챗봇: 미정
-- 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases` skills
-- 최근 변경: learn-context Step 2b 웹 리서치를 3-Phase 구조로 확장 (Issues만 → context 전 항목 커버), Step 1에 서비스명/소개 요청 추가, CLAUDE.md knowledge/ 섹션 연동 업데이트, knowledge/index.md Phase별 카테고리화
-- 미구현: 서브에이전트 (TC 리뷰 등)
+- 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation` skills
+- 최근 변경: CLAUDE.md에 QA 파이프라인 섹션 추가, API Endpoint → API Spec 리네임 + 충분성 기준 정의, TC 포맷 멀티턴 지원, `/run-simulation` 스킬 신규 생성, outputs/index.md 시뮬레이션 섹션 추가
+- 미구현: `/evaluate-results` 스킬, 서브에이전트 (TC 리뷰 등)
 
 ## 다음 세션 할 일
 
+- `/evaluate-results` 스킬 구현 (별도 feature 브랜치)
+  - 시뮬레이션 결과를 TC 평가 기준에 따라 판정 (LLM-as-judge)
+  - 시뮬레이션 결과 파일의 `## 평가 대기` 섹션에 hookpoint 이미 설계됨
 - 서브에이전트 구성 (TC 리뷰 등)
 - (낮음) 웹 리서치 전용 서브에이전트 정의
-  - 목적: 검색 노하우(도메인별 유용한 사이트, 효과적인 키워드 조합, 출처 신뢰도 등)를 축적하여 리서치 품질을 지속적으로 개선
-  - 구현 방안: memory: user-scope는 auto-memory off 환경에서 동작 불확실하므로, knowledge/ 및 서브에이전트 정의 파일(.claude/agents/) 자체에 노하우를 명시하는 방식으로 구현
 - (낮음) Build → Production 전환 작업
-  - 목적: 현재 Build 단계의 내용(설계 논의 이력, 구현 교훈 등)을 정리하고, 실제 사용자(PM)가 사용할 수 있는 상태로 전환
-  - 범위: memory/ 초기화, context/ 표시 방식 재설계 (예: [추출]/[추측] 태깅을 사용자에게 그대로 노출할지), knowledge/ 초기 데이터 정리
-  - 시점: Build 완료 후 진행
 
 ## 핵심 교훈
 

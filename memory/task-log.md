@@ -2,6 +2,25 @@
 
 <!-- 최신 작업이 위로 오도록 기록 -->
 
+## [2026-04-10] run-simulation 스킬 + 파이프라인 고도화
+
+- **요청**: 시뮬레이션 실행 스킬 생성 + 관련 전반 개선
+- **접근**: Plan 모드로 설계 → PM 피드백 2회 반영 (스트리밍 API 지원, CLAUDE.md 파이프라인 섹션 추가)
+- **결과**:
+  - CLAUDE.md에 QA 파이프라인 섹션 추가 (5단계 워크플로우, 단계별 입력/출력/전제 조건 명시)
+  - API Endpoint → API Spec 리네임 (CLAUDE.md, learn-context/SKILL.md). 스트리밍 응답 방식 포함
+  - API Spec 충분성 기준 정의 (필수 3항목 + 권장 3항목 + 선택 3항목)
+  - TC 포맷을 멀티턴 지원으로 변경 (대화 유형 + 대화 흐름 + Turn N 구조)
+  - `/run-simulation` 스킬 신규 생성 (API Spec 검증 → TC 선택 → 실행 → 결과 저장)
+  - outputs/index.md 시뮬레이션 섹션 추가
+- **주요 결정**:
+  - 시뮬레이션은 실행+기록만 담당, 평가(Evaluation)는 별도 스킬로 분리
+  - 멀티턴이 기본이되, User Logs 및 챗봇 유형에 따라 싱글턴도 허용
+  - API Spec 필수 3항목(Endpoint URL, 요청 포맷, 응답 포맷) 미충족 시 시뮬레이션 불가
+  - 스트리밍 응답: API Spec에 명시되면 SSE 처리, 미확인 시 자동 감지 전환
+  - 시뮬레이션 결과에 `## 평가 대기` 섹션으로 evaluation hookpoint 설계
+- **교훈**: 파이프라인 전체 흐름을 CLAUDE.md에 명시하면 에이전트가 단계 간 의존성을 더 잘 이해함
+
 ## [2026-04-09] learn-context 웹 리서치 확장 + Step 1 보완
 
 - **요청**: Step 2b 웹 리서치가 Issues만 커버 → context/ 전 항목 대응으로 확장. Step 1에 서비스명/소개 요청 추가.
