@@ -8,7 +8,7 @@
 - 상태: Learn + Generate + Run 단계 구현 완료
 - QA 대상 챗봇: 미정
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation` skills
-- 최근 변경: `/learn-context` 3대 규칙 준수 강화 — inline 출처 태그 + 경로 prefix 기반 [추출]/[추측] 판정 + API Spec 웹 리서치 금지 경고 박스 + PM 세션 발언의 `inputs/pm-notes-*.md` 파일화. CLAUDE.md는 181줄로 compact화
+- 최근 변경: CLAUDE.md/SKILL.md 다듬기 3 tasks — (1) § API Spec 충분성 기준을 CLAUDE.md → run-simulation/SKILL.md로 이동 + 기존 중복 축약 테이블 2개와 단일 4열 테이블로 병합 (CLAUDE.md 159줄로 축소), (2) summary.md 포맷에 `## 에러 및 특이 사항` 섹션 추가하여 PM 보고 내용 비휘발성화, (3) generate-testcases Step 1에 멀티턴 TC 평균 턴 수 확인 절차 추가 (default 5~6턴). 직전: context 항목 구조 리팩토링 (필수/선택 폐지 → 8개 단일 테이블)
 - 미구현: `/evaluate-results` 스킬, 서브에이전트 (TC 리뷰 등)
 
 ## 다음 세션 할 일
