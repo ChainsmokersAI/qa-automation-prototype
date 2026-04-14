@@ -2,6 +2,35 @@
 
 <!-- 최신 작업이 위로 오도록 기록 -->
 
+## [2026-04-14] QA 파이프라인 스킬 4종 수정 (참고 자료 / 멀티턴 / 스크립트 영속화 / re-anchor / 병렬 실행)
+
+- **요청**: PM — 파이프라인 실사용 중 발견한 4가지 마찰 지점
+  1. `/generate-scenarios`에 참고 자료 (RAG 문서·프롬프트 첨부 파일) 수집 절차 부재
+  2. `/generate-testcases` TC가 싱글턴 위주 — 멀티턴 5~10턴 기본화 요청
+  3. `/run-simulation` 호출 스크립트가 in-memory only — 영속화 필요
+  4. TC 대화 흐름을 챗봇 실제 응답에 억지로 맞추지 말고 자연스럽게 이어가되 비고에 기록
+  - 추가: 시뮬레이션 병렬 실행 + Rate Limit 재시도
+- **접근**: Plan 모드 → Explore 에이전트로 3종 스킬 구조 파악 → 플랜 초안 → AskUserQuestion으로 애매한 축 3개(flow 이탈 시 re-anchor vs 원본 유지, 멀티턴 강제 수준, 스크립트 저장 단위) 확인 → 승인 → 적용
+- **결과**:
+  - **generate-scenarios/SKILL.md**: Step 0.5 "참고 자료 확인" 신규 — PM에게 RAG/첨부파일 등 명시 질의, `inputs/` 업로드, `context/` 갱신 시 `[추출: inputs/...]` 태그
+  - **generate-testcases/SKILL.md**: Step 1·2 재작성 — 모든 TC 기본 멀티턴(5~10턴), 챗봇 유형 무관, FAQ도 기본 멀티턴. User Logs·PM 명시만 예외
+  - **run-simulation/SKILL.md**:
+    - Step 3 "호출 스크립트 작성" 신규 — `outputs/scripts/{chatbot-slug}-api-client.{ext}`로 챗봇 단위 1개 영속화, Spec 변경 시 갱신, Bash로 실행
+    - Step 3 실행 단위 재작성 — TC 간 병렬, TC 내부 Turn은 순차. Turn 2+는 직전 응답이 기대와 유의미하게 다르면 **re-anchor**(사용자 메시지 즉석 조정), 조정 사유는 비고에 기록
+    - Step 3 "병렬 실행 규칙" 신규 — 기본 동시성 5, Rate Limit 명시 시 한도 50%로 자동 하향, conversation_id TC별 독립, 번호순 정렬 저장
+    - Step 3 "에러 처리 및 재시도" 재작성 — 429/503/네트워크 오류 지수 백오프(2→4→8s, jitter ±20%) 최대 3회, `Retry-After` 헤더 우선, 429 반복 시 동시 실행 수 동적 절반 하향, 400/401/403/404는 재시도 제외
+    - Step 3 기록 내용 표·Step 4 TC 결과 파일 포맷: `사용자 메시지(TC 원본)`/`사용자 메시지(실전송)`/`비고` 3필드로 확장
+    - Step 4 디렉토리 구조: `outputs/scripts/` 포함, summary.md에 "TC flow 이탈 TC 수" 집계 추가
+  - **outputs/index.md**: "호출 스크립트" 섹션 신규
+- **주요 결정**:
+  - flow 이탈 시 re-anchor 선택 — 원본 유지보다 자연스러운 대화·TC 목적 달성 우선, 대신 비고에 차이 기록으로 추적성 확보
+  - 멀티턴 강제(예외 있음) — FAQ 챗봇도 기본 멀티턴으로 작성해 커버리지 상향
+  - 스크립트 챗봇 단위 1개 — run-id별 복사본은 중복만 늘어 재현성 가치 < 저장 비용
+  - 병렬 동시성 기본 5 + Rate Limit 한도 50% 자동 하향 — PM이 개발자 아니므로 보수적 기본 제공
+- **검증**: 3개 SKILL.md 및 outputs/index.md 순차 Edit 후 최종 Read로 확인
+- **특이 이벤트**: 병렬 실행 규칙 섹션 추가 직후 사용자가 파일 중간 상태를 보고 "날아간 것 같다"고 판단해 다음 Edit(에러 처리 재작성)을 reject → 이후 Read로 대조 결과 "병렬 실행 규칙"만 빠진 상태였음이 확인되어 해당 섹션만 재삽입 → 에러 처리 재작성은 사용자 확인 후 이어서 적용
+- **교훈**: [lessons-learned.md 참조]
+
 ## [2026-04-14] learn-context Step 2b 웹 리서치 병렬화
 
 - **요청**: PM — "learn-context Step 2 웹 리서치 단계에서 Phase 1, 2, 3를 병렬로 진행할 수 있는지? 시간 소요가 많다"

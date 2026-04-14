@@ -8,7 +8,7 @@
 - 상태: Learn + Generate + Run 단계 구현 완료
 - QA 대상 챗봇: 미정
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation` skills
-- 최근 변경: knowledge/ 디렉토리 제거 — 웹 리서치 결과를 knowledge/{slug}.md에 저장하던 중간층을 없애고, WebFetch로 읽은 raw URL을 context/에 `[추측: URL (YYYY-MM-DD)]` 포맷으로 inline 직접 인용하도록 전환. Phase 1→(2∥3) 병렬 실행과 Phase당 5-source cap은 동일 의미로 유지. 직전: learn-context Step 2b 병렬화 + Step 1 3-단계 분할 수집
+- 최근 변경: 파이프라인 스킬 4종 동시 수정 — (1) `/generate-scenarios`에 Step 0.5 "참고 자료 확인" 추가로 RAG·프롬프트 첨부 파일을 inputs/에 수집·context/ 갱신, (2) `/generate-testcases` TC 기본을 멀티턴(5~10턴)으로 전환(FAQ 포함, PM 명시·User Logs 예외), (3) `/run-simulation`에 `outputs/scripts/` 호출 스크립트 영속화 + TC flow 이탈 시 re-anchor 규칙(원본/실전송/비고 3필드) + TC 간 병렬 실행(기본 5, Rate Limit 한도 50% 자동 하향) + 429/503 지수 백오프 재시도(2→4→8s, `Retry-After` 우선) 추가. 직전: knowledge/ 제거 및 raw URL 직접 인용 구조 전환
 - 미구현: `/evaluate-results` 스킬, 서브에이전트 (TC 리뷰 등)
 
 ## 다음 세션 할 일
