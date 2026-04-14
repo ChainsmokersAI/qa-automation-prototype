@@ -8,7 +8,7 @@
 - 상태: Learn + Generate + Run 단계 구현 완료
 - QA 대상 챗봇: 미정
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation` skills
-- 최근 변경: learn-context Step 2b 병렬화 — `Phase 1` → `(Phase 2 ∥ Phase 3)` 실행 순서 명시, 공통 규칙에 "Phase 2·3 WebSearch 병렬 호출", "Phase 내 WebFetch 동일 메시지 병렬 호출" 규칙 추가 (5 cap 유지). 직전: Step 1 3-단계 분할 수집, Phase 당 소스 5개 cap
+- 최근 변경: knowledge/ 디렉토리 제거 — 웹 리서치 결과를 knowledge/{slug}.md에 저장하던 중간층을 없애고, WebFetch로 읽은 raw URL을 context/에 `[추측: URL (YYYY-MM-DD)]` 포맷으로 inline 직접 인용하도록 전환. Phase 1→(2∥3) 병렬 실행과 Phase당 5-source cap은 동일 의미로 유지. 직전: learn-context Step 2b 병렬화 + Step 1 3-단계 분할 수집
 - 미구현: `/evaluate-results` 스킬, 서브에이전트 (TC 리뷰 등)
 
 ## 다음 세션 할 일
