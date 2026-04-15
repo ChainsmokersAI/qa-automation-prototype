@@ -72,7 +72,7 @@ def _build_md() -> MarkdownIt:
         .use(anchors_plugin, max_level=4, slug_func=lambda s: re.sub(r"\s+", "-", s.strip().lower()))
     )
 
-    def fence_render(tokens, idx, options, env):
+    def fence_render(self, tokens, idx, options, env):
         token = tokens[idx]
         return _highlight_code(token.content, token.info.strip() or None)
 
@@ -165,7 +165,14 @@ def render_file(abs_path: Path) -> dict:
 
     if suffix in {".md", ".markdown"}:
         text, truncated = _read_text(abs_path)
-        body = render_typed_markdown(text, abs_path)
+        try:
+            body = render_typed_markdown(text, abs_path)
+        except Exception:
+            import logging
+            logging.getLogger("viewer.render").exception(
+                "typed markdown render failed, falling back to raw text: %s", abs_path
+            )
+            body = _raw_text_html(text)
         if truncated:
             body = _truncate_notice(rel) + body
         return {**meta, "kind": "markdown", "html": body}
@@ -254,11 +261,22 @@ def _binary_html(rel: str, note: str = "") -> str:
 
 # ---------- Typed markdown renderers ----------
 
+def _raw_text_html(text: str) -> str:
+    return f'<pre class="codehl raw-fallback"><code>{html.escape(text)}</code></pre>'
+
+
 def _render_md_html(text: str, abs_path: Path) -> str:
     if not text or not text.strip():
         return ""
-    rendered = MD.render(text)
-    return _rewrite_links(rendered, abs_path)
+    try:
+        rendered = MD.render(text)
+        return _rewrite_links(rendered, abs_path)
+    except Exception:
+        import logging
+        logging.getLogger("viewer.render").exception(
+            "markdown render failed, falling back to raw text: %s", abs_path
+        )
+        return _raw_text_html(text)
 
 
 _S_HEADER_RE = re.compile(r"^## (S-\d+)(?::\s*(.+?))?\s*$", re.MULTILINE)
