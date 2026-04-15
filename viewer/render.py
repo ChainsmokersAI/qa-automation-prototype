@@ -315,7 +315,7 @@ def render_scenarios(text: str, abs_path: Path) -> str:
         body_end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
         body = text[body_start:body_end].strip()
         body = _HR_TAIL_RE.sub("", body)
-        body_html = _render_md_html(body, abs_path)
+        body_html = _render_scenario_body(body, abs_path)
         out.append(
             '<details class="sc-block" id="{slug}">'
             '<summary class="sc-summary">'
@@ -331,6 +331,23 @@ def render_scenarios(text: str, abs_path: Path) -> str:
             )
         )
     out.append("</div>")
+    return "".join(out)
+
+
+_SC_PURPOSE_HEADERS = ("### 테스트 목적",)
+
+
+def _render_scenario_body(body: str, abs_path: Path) -> str:
+    parts = re.split(r"(?=^### )", body, flags=re.MULTILINE)
+    out: list[str] = []
+    for part in parts:
+        if not part.strip():
+            continue
+        part_html = _render_md_html(part, abs_path)
+        if any(part.startswith(h) for h in _SC_PURPOSE_HEADERS):
+            out.append(f'<div class="sc-purpose-box">{part_html}</div>')
+        else:
+            out.append(part_html)
     return "".join(out)
 
 
@@ -370,6 +387,12 @@ def render_testcases(text: str, abs_path: Path) -> str:
 
 
 _TC_HIGHLIGHT_HEADERS = ("### 평가 기준", "### 목적", "### 테스트 목적")
+_TC_FLOW_HEADER = "### 대화 흐름"
+_TC_USER_LI_RE = re.compile(r"<li>(\s*<strong>사용자</strong>\s*:)")
+
+
+def _highlight_user_messages(html_text: str) -> str:
+    return _TC_USER_LI_RE.sub(r'<li class="tc-user-msg">\1', html_text)
 
 
 def _render_testcase_body(body: str, abs_path: Path) -> str:
@@ -379,6 +402,8 @@ def _render_testcase_body(body: str, abs_path: Path) -> str:
         if not part.strip():
             continue
         part_html = _render_md_html(part, abs_path)
+        if part.startswith(_TC_FLOW_HEADER):
+            part_html = _highlight_user_messages(part_html)
         if any(part.startswith(h) for h in _TC_HIGHLIGHT_HEADERS):
             out.append(f'<div class="tc-eval-box">{part_html}</div>')
         else:

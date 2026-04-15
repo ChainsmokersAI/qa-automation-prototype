@@ -379,6 +379,33 @@ details[open] > .tc-summary::before { transform: rotate(90deg); }
 .tc-eval-box ul { padding-left: 1.4em; }
 .tc-eval-box li { margin: 4px 0; }
 
+.sc-purpose-box {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-left: 3px solid #57606a;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin: 14px 0;
+}
+.sc-purpose-box h3 {
+  color: #1f2328 !important;
+  margin-top: 0.2em !important;
+  font-weight: 600;
+  font-size: 13px;
+}
+.sc-purpose-box ul { padding-left: 1.4em; }
+.sc-purpose-box li { margin: 4px 0; }
+
+li.tc-user-msg {
+  background: #eaeef2;
+  border-left: 3px solid #8b949e;
+  border-radius: 0 4px 4px 0;
+  padding: 8px 12px;
+  margin: 8px 0;
+  list-style: none;
+}
+li.tc-user-msg + li { margin-top: 4px; }
+
 .sc-intro, .tc-intro {
   background: #f6f8fa;
   border-left: 3px solid #1f6feb;
