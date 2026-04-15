@@ -20,14 +20,6 @@
             <span class="cat-dirty" title="새 변경"></span>
           </div>
           <div class="cat-body">
-            <div id="dropzone">
-              <p>파일을 여기에 드롭하여 inputs/ 에 업로드</p>
-              <label class="upload-btn">
-                <input type="file" id="file-input" multiple hidden />
-                파일 선택
-              </label>
-              <div id="upload-status"></div>
-            </div>
             <ul class="tree"></ul>
           </div>
         </li>
@@ -60,6 +52,16 @@
           <div class="cat-body"><ul class="tree"></ul></div>
         </li>
       </ul>
+      <footer id="sidebar-footer">
+        <div id="dropzone">
+          <label class="upload-btn">
+            <input type="file" id="file-input" multiple hidden />
+            파일 추가 (inputs/)
+          </label>
+          <div class="dz-hint">드래그&드롭도 가능</div>
+          <div id="upload-status"></div>
+        </div>
+      </footer>
     </aside>
     <main id="main">
       <header id="breadcrumb"><span class="muted">왼쪽에서 파일을 선택하세요</span></header>

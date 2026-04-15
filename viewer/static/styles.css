@@ -94,30 +94,47 @@ body { display: flex; }
 .cat-testcases > .cat-header,
 .cat-simulations > .cat-header { background: #dde0e4; }
 
+#sidebar-footer {
+  flex: 0 0 auto;
+  border-top: 1px solid #d0d7de;
+  padding: 10px 12px;
+  background: #fafbfc;
+}
 #dropzone {
-  margin: 4px 4px 12px;
-  padding: 14px;
-  border: 2px dashed #d0d7de;
-  border-radius: 8px;
+  border: 1.5px dashed #d0d7de;
+  border-radius: 6px;
+  padding: 10px 12px;
   text-align: center;
-  background: #f6f8fa;
+  background: #ffffff;
   transition: background 0.15s, border-color 0.15s;
 }
 #dropzone.dragover {
   background: #ddf4ff;
   border-color: #1f6feb;
 }
-#dropzone p { margin: 0 0 8px; font-size: 12px; color: #57606a; }
 .upload-btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 14px;
   background: #1f6feb;
   color: #fff;
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
+  font-weight: 600;
 }
-#upload-status { margin-top: 8px; font-size: 11px; color: #57606a; min-height: 14px; }
+.upload-btn:hover { background: #1858c4; }
+.dz-hint {
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: #8b949e;
+}
+#upload-status {
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: #57606a;
+  min-height: 12px;
+  word-break: break-word;
+}
 
 .tree, .tree ul {
   list-style: none;
