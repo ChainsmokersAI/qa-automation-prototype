@@ -51,13 +51,18 @@ function parseHash() {
   if (!hash.startsWith("#/view")) return null;
   const qs = hash.split("?")[1] || "";
   const params = new URLSearchParams(qs);
-  return { cat: params.get("cat"), path: params.get("path") };
+  return {
+    cat: params.get("cat"),
+    path: params.get("path"),
+    anchor: params.get("anchor"),
+  };
 }
 
-function setHash(cat, path) {
+function setHash(cat, path, anchor) {
   const params = new URLSearchParams();
   if (cat) params.set("cat", cat);
   if (path) params.set("path", path);
+  if (anchor) params.set("anchor", anchor);
   const next = `#/view?${params.toString()}`;
   if (location.hash !== next) {
     location.hash = next;
@@ -170,7 +175,7 @@ function cssEscape(s) {
   return s.replace(/(["\\])/g, "\\$1");
 }
 
-async function loadContent(path) {
+async function loadContent(path, anchor) {
   state.currentPath = path;
   if (!path) {
     el.content.innerHTML = "";
@@ -190,6 +195,9 @@ async function loadContent(path) {
     el.content.scrollTop = 0;
     interceptInternalLinks();
     highlightActive();
+    if (anchor) {
+      requestAnimationFrame(() => openAnchorInContent(anchor));
+    }
   } catch (err) {
     el.content.innerHTML = `<div class="error">렌더 실패: ${escapeHtml(err.message)}</div>`;
   }
@@ -207,6 +215,35 @@ function interceptInternalLinks() {
       }
     });
   });
+  el.content.querySelectorAll("a[href^='#']").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href || href.startsWith("#/")) return;
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      openAnchorInContent(href.slice(1));
+    });
+  });
+}
+
+function openAnchorInContent(id) {
+  if (!id) return;
+  let target = el.content.querySelector(`[id="${cssEscape(id)}"]`);
+  if (!target) {
+    target = el.content.querySelector(`[id="${cssEscape(id.toLowerCase())}"]`);
+  }
+  if (!target) {
+    const m = id.match(/^([a-zA-Z]+-\d+)/);
+    if (m) {
+      target = el.content.querySelector(`[id="${cssEscape(m[1].toLowerCase())}"]`);
+    }
+  }
+  if (!target) return;
+  let parent = target;
+  while (parent && parent !== el.content) {
+    if (parent.tagName === "DETAILS") parent.open = true;
+    parent = parent.parentElement;
+  }
+  target.scrollIntoView({ block: "start", behavior: "smooth" });
 }
 
 function escapeHtml(s) {
@@ -261,9 +298,11 @@ function applyRoute() {
   if (route && route.path) {
     const cat = (route.cat && CATEGORIES.includes(route.cat)) ? route.cat : (categoryOf(route.path) || "inputs");
     if (state.expandedCat !== cat) {
-      expandCategory(cat).then(() => loadContent(route.path));
-    } else {
-      loadContent(route.path);
+      expandCategory(cat).then(() => loadContent(route.path, route.anchor));
+    } else if (route.path !== state.currentPath) {
+      loadContent(route.path, route.anchor);
+    } else if (route.anchor) {
+      openAnchorInContent(route.anchor);
     }
   } else if (route && route.cat && CATEGORIES.includes(route.cat)) {
     if (state.expandedCat !== route.cat) expandCategory(route.cat);

@@ -6,7 +6,7 @@ import mimetypes
 import re
 import zipfile
 from pathlib import Path
-from urllib.parse import quote, urlparse
+from urllib.parse import quote, unquote, urlparse
 
 from markdown_it import MarkdownIt
 from mdit_py_plugins.anchors import anchors_plugin
@@ -98,6 +98,9 @@ def _rewrite_url(current_file: Path, url: str) -> str:
     if url.startswith("/"):
         return url
     bare = url.split("#", 1)[0].split("?", 1)[0]
+    fragment = ""
+    if "#" in url:
+        fragment = url.split("#", 1)[1]
     if not bare:
         return url
     target = resolve_relative_link(current_file, bare)
@@ -107,7 +110,8 @@ def _rewrite_url(current_file: Path, url: str) -> str:
     encoded = quote(rel, safe="/")
     if target.suffix.lower() in {".md", ".markdown"}:
         cat = category_of(target) or ""
-        return f"#/view?cat={cat}&path={encoded}"
+        anchor = f"&anchor={quote(unquote(fragment), safe='')}" if fragment else ""
+        return f"#/view?cat={cat}&path={encoded}{anchor}"
     return f"/raw?path={encoded}"
 
 
@@ -161,11 +165,10 @@ def render_file(abs_path: Path) -> dict:
 
     if suffix in {".md", ".markdown"}:
         text, truncated = _read_text(abs_path)
-        rendered = MD.render(text)
-        rendered = _rewrite_links(rendered, abs_path)
+        body = render_typed_markdown(text, abs_path)
         if truncated:
-            rendered = _truncate_notice(rel) + rendered
-        return {**meta, "kind": "markdown", "html": f'<div class="md-body">{rendered}</div>'}
+            body = _truncate_notice(rel) + body
+        return {**meta, "kind": "markdown", "html": body}
 
     if suffix == ".pdf":
         return {
@@ -246,4 +249,295 @@ def _binary_html(rel: str, note: str = "") -> str:
         f'<div class="binary-body">{note_html}'
         f'<p>바이너리 파일입니다. <a class="download" href="/raw?path={encoded}">다운로드</a></p>'
         f"</div>"
+    )
+
+
+# ---------- Typed markdown renderers ----------
+
+def _render_md_html(text: str, abs_path: Path) -> str:
+    if not text or not text.strip():
+        return ""
+    rendered = MD.render(text)
+    return _rewrite_links(rendered, abs_path)
+
+
+_S_HEADER_RE = re.compile(r"^## (S-\d+)(?::\s*(.+?))?\s*$", re.MULTILINE)
+_TC_HEADER_RE = re.compile(r"^## (TC-\d+)(?::\s*(.+?))?\s*$", re.MULTILINE)
+_TURN_HEADER_RE = re.compile(r"^### Turn (\d+)\s*$", re.MULTILINE)
+_HR_TAIL_RE = re.compile(r"\n+---\s*$")
+
+
+def render_typed_markdown(text: str, abs_path: Path) -> str:
+    cat = category_of(abs_path)
+    name = abs_path.name
+    if cat == "scenarios":
+        return render_scenarios(text, abs_path)
+    if cat == "testcases":
+        return render_testcases(text, abs_path)
+    if cat == "simulations":
+        if name.startswith("tc-") and name.endswith(".md"):
+            return render_simulation_tc(text, abs_path)
+        return render_simulation_summary(text, abs_path)
+    return f'<div class="md-body">{_render_md_html(text, abs_path)}</div>'
+
+
+def render_scenarios(text: str, abs_path: Path) -> str:
+    matches = list(_S_HEADER_RE.finditer(text))
+    if not matches:
+        return f'<div class="md-body">{_render_md_html(text, abs_path)}</div>'
+    out: list[str] = []
+    intro = text[: matches[0].start()].strip()
+    if intro:
+        out.append(f'<div class="md-body sc-intro">{_render_md_html(intro, abs_path)}</div>')
+    out.append('<div class="sc-list">')
+    for i, m in enumerate(matches):
+        sid = m.group(1)
+        title = (m.group(2) or "").strip()
+        body_start = m.end()
+        body_end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        body = text[body_start:body_end].strip()
+        body = _HR_TAIL_RE.sub("", body)
+        body_html = _render_md_html(body, abs_path)
+        out.append(
+            '<details class="sc-block" id="{slug}">'
+            '<summary class="sc-summary">'
+            '<span class="sc-id">{sid}</span>'
+            '<span class="sc-title">{title}</span>'
+            '</summary>'
+            '<div class="sc-body md-body">{body}</div>'
+            '</details>'.format(
+                slug=html.escape(sid.lower()),
+                sid=html.escape(sid),
+                title=html.escape(title),
+                body=body_html,
+            )
+        )
+    out.append("</div>")
+    return "".join(out)
+
+
+def render_testcases(text: str, abs_path: Path) -> str:
+    matches = list(_TC_HEADER_RE.finditer(text))
+    if not matches:
+        return f'<div class="md-body">{_render_md_html(text, abs_path)}</div>'
+    out: list[str] = []
+    intro = text[: matches[0].start()].strip()
+    if intro:
+        out.append(f'<div class="md-body tc-intro">{_render_md_html(intro, abs_path)}</div>')
+    out.append('<div class="tc-list">')
+    for i, m in enumerate(matches):
+        tcid = m.group(1)
+        title = (m.group(2) or "").strip()
+        body_start = m.end()
+        body_end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        body = text[body_start:body_end].strip()
+        body = _HR_TAIL_RE.sub("", body)
+        body_html = _render_testcase_body(body, abs_path)
+        out.append(
+            '<details class="tc-block" id="{slug}">'
+            '<summary class="tc-summary">'
+            '<span class="tc-id">{tcid}</span>'
+            '<span class="tc-title">{title}</span>'
+            '</summary>'
+            '<div class="tc-body md-body">{body}</div>'
+            '</details>'.format(
+                slug=html.escape(tcid.lower()),
+                tcid=html.escape(tcid),
+                title=html.escape(title),
+                body=body_html,
+            )
+        )
+    out.append("</div>")
+    return "".join(out)
+
+
+_TC_HIGHLIGHT_HEADERS = ("### 평가 기준", "### 목적", "### 테스트 목적")
+
+
+def _render_testcase_body(body: str, abs_path: Path) -> str:
+    parts = re.split(r"(?=^### )", body, flags=re.MULTILINE)
+    out: list[str] = []
+    for part in parts:
+        if not part.strip():
+            continue
+        part_html = _render_md_html(part, abs_path)
+        if any(part.startswith(h) for h in _TC_HIGHLIGHT_HEADERS):
+            out.append(f'<div class="tc-eval-box">{part_html}</div>')
+        else:
+            out.append(part_html)
+    return "".join(out)
+
+
+def render_simulation_summary(text: str, abs_path: Path) -> str:
+    return f'<div class="md-body sim-summary">{_render_md_html(text, abs_path)}</div>'
+
+
+def render_simulation_tc(text: str, abs_path: Path) -> str:
+    matches = list(_TURN_HEADER_RE.finditer(text))
+    if not matches:
+        return f'<div class="md-body">{_render_md_html(text, abs_path)}</div>'
+
+    intro = text[: matches[0].start()].strip()
+    intro_html = _render_md_html(intro, abs_path) if intro else ""
+
+    last_end = matches[-1].end()
+    trailing_h2 = re.search(r"^## ", text[last_end:], re.MULTILINE)
+    if trailing_h2:
+        trailing_start = last_end + trailing_h2.start()
+        trailing = text[trailing_start:].strip()
+    else:
+        trailing_start = len(text)
+        trailing = ""
+
+    turn_blocks: list[str] = []
+    for i, m in enumerate(matches):
+        turn_num = m.group(1)
+        body_start = m.end()
+        if i + 1 < len(matches):
+            body_end = matches[i + 1].start()
+        else:
+            body_end = trailing_start
+        body = text[body_start:body_end]
+        mid_h2 = re.search(r"^## ", body, re.MULTILINE)
+        if mid_h2:
+            body = body[: mid_h2.start()]
+        turn_blocks.append(_render_turn_block(turn_num, body, abs_path))
+
+    trailing_html = ""
+    if trailing:
+        trailing_html = (
+            '<details class="sim-trailing">'
+            '<summary>부가 섹션 (평가 대기 등)</summary>'
+            f'<div class="md-body">{_render_md_html(trailing, abs_path)}</div>'
+            "</details>"
+        )
+
+    intro_block = f'<div class="sim-intro md-body">{intro_html}</div>' if intro_html else ""
+    return (
+        '<div class="sim-tc">'
+        f"{intro_block}"
+        f'<div class="sim-turns">{"".join(turn_blocks)}</div>'
+        f"{trailing_html}"
+        "</div>"
+    )
+
+
+def _render_turn_block(turn_num: str, body: str, abs_path: Path) -> str:
+    lines = body.split("\n")
+    header_lines: list[str] = []
+    response_lines: list[str] = []
+    ref_lines: list[str] = []
+    state = "header"
+    for line in lines:
+        if state == "header":
+            if line.strip() == "- **챗봇 응답**:":
+                state = "response"
+            elif line.strip().startswith("- **reference"):
+                state = "ref"
+                ref_lines.append(line)
+            else:
+                header_lines.append(line)
+        elif state == "response":
+            if line.startswith("    "):
+                response_lines.append(line[4:])
+            elif line.strip() == "":
+                response_lines.append("")
+            elif line.strip().startswith("- **reference"):
+                state = "ref"
+                ref_lines.append(line)
+            else:
+                state = "ref"
+                ref_lines.append(line)
+        else:
+            ref_lines.append(line)
+
+    fields: dict[str, str] = {}
+    user_orig: str | None = None
+    user_sent: str | None = None
+    for line in header_lines:
+        mm = re.match(r"^- \*\*요청 시각\*\*:\s*(.+?)\s*$", line)
+        if mm:
+            fields["time"] = mm.group(1)
+            continue
+        mm = re.match(r"^- \*\*사용자 메시지 \(TC 원본\)\*\*:\s*(.+?)\s*$", line)
+        if mm:
+            user_orig = mm.group(1)
+            continue
+        mm = re.match(r"^- \*\*사용자 메시지 \(실전송\)\*\*:\s*(.+?)\s*$", line)
+        if mm:
+            user_sent = mm.group(1)
+            continue
+        mm = re.match(r"^- \*\*응답 시간\*\*:\s*(.+?)\s*$", line)
+        if mm:
+            fields["rt"] = mm.group(1)
+            continue
+        mm = re.match(r"^- \*\*상태\*\*:\s*(.+?)\s*$", line)
+        if mm:
+            fields["status"] = mm.group(1)
+            continue
+        mm = re.match(r"^- \*\*비고\*\*:\s*(.+?)\s*$", line)
+        if mm:
+            fields["note"] = mm.group(1)
+            continue
+
+    if user_sent and user_sent != "원본과 동일":
+        user_msg = user_sent
+        user_orig_diff = user_orig
+    else:
+        user_msg = user_orig or user_sent or ""
+        user_orig_diff = None
+
+    response_text = "\n".join(response_lines).strip()
+    response_html = (
+        _render_md_html(response_text, abs_path)
+        if response_text
+        else "<em class='muted'>(응답 없음)</em>"
+    )
+
+    ref_text = "\n".join(ref_lines).strip()
+    ref_html = _render_md_html(ref_text, abs_path) if ref_text else ""
+
+    meta_parts: list[str] = []
+    if fields.get("time"):
+        meta_parts.append(f'<span class="meta-pill">{html.escape(fields["time"])}</span>')
+    if fields.get("rt"):
+        meta_parts.append(f'<span class="meta-pill">{html.escape(fields["rt"])}</span>')
+    if fields.get("status"):
+        st = fields["status"]
+        cls = "status-ok" if st == "success" else "status-fail"
+        meta_parts.append(f'<span class="meta-pill {cls}">{html.escape(st)}</span>')
+    if fields.get("note"):
+        meta_parts.append(f'<span class="meta-pill note">{html.escape(fields["note"])}</span>')
+    meta_row = "".join(meta_parts)
+
+    orig_diff_html = ""
+    if user_orig_diff:
+        orig_diff_html = (
+            f'<div class="user-orig-diff">원본: {html.escape(user_orig_diff)}</div>'
+        )
+
+    refs_block = ""
+    if ref_html:
+        refs_block = (
+            '<details class="refs">'
+            '<summary>reference</summary>'
+            f'<div class="md-body">{ref_html}</div>'
+            "</details>"
+        )
+
+    return (
+        '<div class="sim-turn">'
+        '<div class="turn-header">'
+        f'<span class="turn-num">Turn {html.escape(turn_num)}</span>'
+        f'<span class="turn-meta">{meta_row}</span>'
+        "</div>"
+        '<div class="chat user">'
+        f'<div class="bubble">{html.escape(user_msg)}</div>'
+        f"{orig_diff_html}"
+        "</div>"
+        '<div class="chat bot">'
+        f'<div class="bubble md-body">{response_html}</div>'
+        "</div>"
+        f"{refs_block}"
+        "</div>"
     )

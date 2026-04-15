@@ -283,3 +283,259 @@ pre.codehl { margin: 0; }
   border-radius: 6px;
   font-size: 13px;
 }
+
+/* ---------- Typed renderers ---------- */
+
+.sc-list, .tc-list { max-width: 960px; margin-top: 12px; }
+.sc-block, .tc-block {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.sc-summary, .tc-summary {
+  padding: 11px 14px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  list-style: none;
+  user-select: none;
+  font-size: 14px;
+}
+.sc-summary::-webkit-details-marker, .tc-summary::-webkit-details-marker { display: none; }
+.sc-summary::before, .tc-summary::before {
+  content: "▸";
+  font-size: 11px;
+  color: #57606a;
+  display: inline-block;
+  transition: transform 0.15s;
+  width: 10px;
+  flex: 0 0 10px;
+}
+details[open] > .sc-summary::before,
+details[open] > .tc-summary::before { transform: rotate(90deg); }
+.sc-summary:hover, .tc-summary:hover { background: #f6f8fa; }
+.sc-id, .tc-id {
+  background: #ddf4ff;
+  color: #0969da;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+.sc-title, .tc-title {
+  font-weight: 500;
+  color: #1f2328;
+  word-break: break-word;
+}
+.sc-body, .tc-body {
+  padding: 4px 18px 18px;
+  border-top: 1px solid #eaeef2;
+}
+.sc-body h3, .tc-body h3 {
+  font-size: 13px;
+  margin: 1.2em 0 0.4em;
+  color: #57606a;
+  border-bottom: none;
+  padding-bottom: 0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.tc-eval-box {
+  background: #fff8c5;
+  border: 1px solid #d4a72c;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin: 14px 0;
+}
+.tc-eval-box h3 {
+  color: #6a4c00 !important;
+  margin-top: 0.2em !important;
+  font-weight: 700;
+  font-size: 13px;
+}
+.tc-eval-box ul { padding-left: 1.4em; }
+.tc-eval-box li { margin: 4px 0; }
+
+.sc-intro, .tc-intro {
+  background: #f6f8fa;
+  border-left: 3px solid #1f6feb;
+  padding: 10px 18px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  border-radius: 0 4px 4px 0;
+}
+.sc-intro h1, .tc-intro h1 {
+  font-size: 1.25em;
+  border-bottom: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+/* Simulation TC */
+.sim-tc { max-width: 960px; }
+.sim-intro {
+  background: #f6f8fa;
+  border-left: 3px solid #1f6feb;
+  padding: 10px 18px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  border-radius: 0 4px 4px 0;
+}
+.sim-intro h1 {
+  font-size: 1.2em;
+  border-bottom: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+.sim-intro h2 {
+  font-size: 1em;
+  border-bottom: none;
+  margin-top: 0.8em;
+}
+.sim-intro table { font-size: 12px; }
+.sim-turns { display: flex; flex-direction: column; gap: 22px; }
+.sim-turn {
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 16px 18px;
+  background: #fff;
+}
+.turn-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeef2;
+  flex-wrap: wrap;
+}
+.turn-num {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1f2328;
+  flex: 0 0 auto;
+}
+.turn-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+}
+.meta-pill {
+  font-size: 11px;
+  padding: 1px 8px;
+  background: #eff1f3;
+  color: #57606a;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+.meta-pill.status-ok { background: #dafbe1; color: #1a7f37; }
+.meta-pill.status-fail { background: #ffebe9; color: #cf222e; }
+.meta-pill.note { background: #fff8c5; color: #6a4c00; max-width: 360px; overflow: hidden; text-overflow: ellipsis; }
+
+.chat { margin: 8px 0; display: flex; }
+.chat.user { justify-content: flex-end; }
+.chat.bot { justify-content: flex-start; }
+.chat .bubble {
+  max-width: 78%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.55;
+  font-size: 14px;
+  word-break: break-word;
+}
+.chat.user .bubble {
+  background: #1f6feb;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+  white-space: pre-wrap;
+}
+.chat.bot .bubble {
+  background: #f1f3f5;
+  color: #1f2328;
+  border-bottom-left-radius: 4px;
+}
+.chat.bot .bubble.md-body { font-size: 13.5px; }
+.chat.bot .bubble.md-body p { margin: 0.4em 0; }
+.chat.bot .bubble.md-body p:first-child { margin-top: 0; }
+.chat.bot .bubble.md-body p:last-child { margin-bottom: 0; }
+.chat.bot .bubble.md-body blockquote {
+  border-left: 3px solid #1f6feb;
+  margin: 0.5em 0;
+  padding: 4px 12px;
+  background: #ffffff;
+  border-radius: 4px;
+  color: #1f2328;
+}
+.chat.bot .bubble.md-body ul,
+.chat.bot .bubble.md-body ol { padding-left: 1.3em; margin: 0.4em 0; }
+.chat.bot .bubble.md-body li { margin: 2px 0; }
+.chat.bot .bubble.md-body code:not(pre code) {
+  background: #ffffff;
+  padding: 1px 5px;
+}
+.user-orig-diff {
+  font-size: 11px;
+  color: #8b949e;
+  text-align: right;
+  margin-top: 4px;
+  padding-right: 4px;
+}
+
+.refs {
+  margin-top: 12px;
+  background: #f6f8fa;
+  border: 1px solid #eaeef2;
+  border-radius: 6px;
+  padding: 6px 14px;
+}
+.refs > summary {
+  cursor: pointer;
+  font-size: 11px;
+  color: #57606a;
+  font-weight: 600;
+  list-style: none;
+  user-select: none;
+}
+.refs > summary::-webkit-details-marker { display: none; }
+.refs > summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s;
+}
+.refs[open] > summary::before { content: "▾ "; }
+.refs .md-body { font-size: 11.5px; margin-top: 6px; color: #57606a; }
+.refs .md-body p { margin: 0.3em 0; }
+.refs .md-body ul { padding-left: 1.2em; margin: 0.3em 0; }
+.refs .md-body li { margin: 2px 0; }
+.refs .md-body code:not(pre code) { font-size: 10.5px; background: #eaeef2; }
+
+.sim-trailing {
+  margin-top: 18px;
+  background: #f6f8fa;
+  border: 1px solid #eaeef2;
+  border-radius: 6px;
+  padding: 8px 14px;
+}
+.sim-trailing > summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: #57606a;
+  font-weight: 600;
+  list-style: none;
+}
+.sim-trailing > summary::-webkit-details-marker { display: none; }
+.sim-trailing > summary::before {
+  content: "▸ ";
+  display: inline-block;
+}
+.sim-trailing[open] > summary::before { content: "▾ "; }
+
+.sim-summary table { font-size: 13px; }
