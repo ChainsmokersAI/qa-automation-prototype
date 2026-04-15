@@ -1,14 +1,13 @@
 # Context Index
 
-QA 대상 챗봇의 구조화된 정보입니다.
-`/learn` 스킬 실행 후 생성된 파일들이 아래에 @import로 등록됩니다.
+QA 대상 챗봇(**에듀탭** — 온라인 강의 플랫폼 1:1 AI 튜터)의 구조화된 정보입니다.
+세션 시작 시 아래 파일들이 @import로 자동 로딩됩니다.
 
-아직 등록된 컨텍스트 파일이 없습니다. `/learn`을 실행하여 챗봇 정보를 수집하세요.
-
-<!-- context/ 파일이 추가되면 아래에 @import를 추가:
-@chatbot-identity.md
-@target-users.md
-@core-capabilities.md
-@out-of-scope.md
-@user-flows.md
--->
+@01-chatbot-identity.md
+@02-target-users.md
+@03-core-capabilities.md
+@04-user-flows.md
+@05-out-of-scope.md
+@06-issues.md
+@07-api-spec.md
+@08-user-logs.md

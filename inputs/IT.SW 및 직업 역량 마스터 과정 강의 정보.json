@@ -1,0 +1,80 @@
+{
+  "courses": [
+    {
+      "course_id": "CX251104",
+      "course_type": "SUBJ_TYPE",
+      "course_title": "IT/SW 및 직업 역량 마스터 과정",
+      "course_description": "IT/SW 및 직업 역량 마스터 과정입니다.",
+      "course_categories": [
+        {
+          "site": "TAP-A",
+          "course_category_id": "1",
+          "course_category_parent_id": "",
+          "depth": 0,
+          "course_category_title": "DEMO"
+        }
+      ],
+      "total_play_time": 7470,
+      "total_clip_count": 6,
+      "instructors": [
+        {
+          "instructor": "김강사",
+          "instructor_number": "INST001"
+        }
+      ],
+      "course_curriculum": {
+            "clips": [
+              {
+                "clip_id": "CX251104_1_1",
+                "clip_order": 1,
+                "clip_title": "[NCS 직업기초능력] 직업윤리",
+                "clip_description": "직업윤리를 설명하는 영상입니다.",
+                "clip_play_time": 1662,
+                "clip_level": 1
+              },
+              {
+                "clip_id": "CX251104_1_2",
+                "clip_order": 2,
+                "clip_title": "[빅데이터 분석] 머신러닝 기반 데이터 분석 기획",
+                "clip_description": "머신러닝 기반 데이터 분석 기획을 설명하는 영상입니다.",
+                "clip_play_time": 1658,
+                "clip_level": 1
+              },
+              {
+                "clip_id": "CX251104_1_3",
+                "clip_order": 3,
+                "clip_title": "[EBS] 컴활 1급 2024 최신 개정사항 특강",
+                "clip_description": "컴활 1급 2024 최신 개정사항 특강을 설명하는 영상입니다.",
+                "clip_play_time": 1474,
+                "clip_level": 1
+              },
+              {
+                "clip_id": "CX251104_1_4",
+                "clip_order": 4,
+                "clip_title": "[인공지능]파인튜닝을 통한 KPoEM 모델 구현",
+                "clip_description": "파인튜닝을 통한 KPoEM 모델 구현을 설명하는 영상입니다.",
+                "clip_play_time": 771,
+                "clip_level": 1
+              },
+              {
+                "clip_id": "CX251104_1_5",
+                "clip_order": 5,
+                "clip_title": "[자바스크립트] 최신 문법 (ES6, ES11) 모르면 후회 하는 최신 문법과 사용법 정리",
+                "clip_description": "최신 문법 (ES6, ES11) 모르면 후회 하는 최신 문법과 사용법 정리을 설명하는 영상입니다.",
+                "clip_play_time": 916,
+                "clip_level": 1
+              },
+              {
+                "clip_id": "CX251104_1_6",
+                "clip_order": 6,
+                "clip_title": "[정보처리기사] 네트워크 관련 장비",
+                "clip_description": "네트워크 관련 장비를 설명하는 영상입니다.",
+                "clip_play_time": 989,
+                "clip_level": 1
+              }
+          }
+        ]
+      }
+    }
+  ]
+}

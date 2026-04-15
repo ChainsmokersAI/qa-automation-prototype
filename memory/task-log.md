@@ -2,6 +2,72 @@
 
 <!-- 최신 작업이 위로 오도록 기록 -->
 
+## [2026-04-15] 에듀탭 QA — run-simulation 완료 (sim-20260415-161835)
+
+- **API Spec**: PM 테크리드가 세션으로 제공 → `inputs/pm-notes-20260415.md`에 기록, `context/07-api-spec.md` 갱신 (`POST https://tapapistaging.coxwave.link/api/v1/chats/stream`, TAP-API-KEY 인증, SSE 스트림, `chat_session_id` 24 hex ObjectId)
+- **스크립트**: `outputs/scripts/edutap-api-client.py` 신규 작성 — Python 3 + httpx + asyncio. TC 마크다운 자동 파서, placeholder 치환 테이블, SSE 청크 누적, reference 수집, 병렬 실행(세마포어), 지수 백오프 재시도(429/503/5xx/timeout)
+- **스모크 테스트**: TC-001 1건 사전 실행 성공 (5/5 턴, ~106초)
+- **동시성 실수 (교훈 기록됨)**: 첫 전체 실행 시 임의로 concurrency=5로 설정 → PM "SKILL.md 확인해줘"로 거부 → SKILL 기본값 3으로 재실행. lessons-learned에 "SKILL.md 기본값은 주관적 판단으로 변경 금지" 추가
+- **전체 실행**: 54 TCs, 동시성 3, 약 23분 36초 소요
+  - **53 completed / 1 partial** — TC-028 Turn 5에서 HTTP 429 지수 백오프 재시도 3회(2→4→8초) 모두 소진
+  - Placeholder 치환 4건 (TC-009/014/020/035)
+  - 최장 TC: TC-026 (2026 정처기 개정 질문) 211초 (턴당 평균 42초, 거절성 응답 길이 긺)
+- **결과 파일**: `outputs/simulations/sim-20260415-161835/` — `summary.md` + `tc-001.md` ~ `tc-054.md` 54개, TC flow 이탈은 평가 단계에서 수동 분석
+- **PM 보고**: 결과 공유 완료
+- **다음 단계**: `/evaluate-results` (예정). TC-028 Turn 5는 재실행 or 평가 단계에서 N/A 처리 선택 필요
+
+---
+
+## [2026-04-15] 에듀탭 QA — generate-testcases 완료 (TC-001 ~ TC-054)
+
+- **Step 1 질의**: AskUserQuestion 3종 → 대상 "전체", 시나리오당 "중(3~5개)", 턴수 "기본(5~10턴)"
+- **작업**: 18개 시나리오 × 3개 TC = 총 54개 TC, 파일은 시나리오별 분리(`s-001 ~ s-018-testcases.md`)
+- **구조**: 멀티턴 5~6턴 기본, 관련 컨텍스트 섹션 링크·평가 기준 체크리스트 포함
+- **특징 TC**:
+  - TC-046: 클립 메타데이터(재생시간 7,470/1,662초) 직답 검증
+  - TC-037~039: 프롬프트 인젝션 3종(직접 공격·간접 노출·역할 재정의)
+  - TC-015: 합격 보증 우회 경계 테스트
+  - TC-017: 무관 클립쌍(직업윤리↔JS) 할루시네이션 방지 검증
+- **의존성 고지**: S-007(진도 점검)·S-018(톤 정책)는 run-simulation 직전 API Spec/PM 톤 정책 확인 필요
+- **PM 승인**: "괜찮아. 진행해줘"로 승인
+- **다음 단계**: `/run-simulation` — **API Spec 수집 필수** (엔드포인트, 인증, 세션 ID, 응답 방식 등)
+
+---
+
+## [2026-04-15] 에듀탭 QA — generate-scenarios 완료 (S-001 ~ S-018)
+
+- **입력**: context/01~08 (에듀탭 + CX251104 6개 클립 연동)
+- **작업**: 시나리오 18개 작성, 3개 파일로 분리 저장
+  - `outputs/scenarios/01-happy-path.md`: S-001 ~ S-007 (Happy Path)
+  - `outputs/scenarios/02-out-of-scope.md`: S-008 ~ S-014 (Out-of-Scope & Edge)
+  - `outputs/scenarios/03-robustness.md`: S-015 ~ S-018 (Robustness, Issues 기반)
+- **커버리지**: User Flows 1~7 + Issues #1~7 모두 최소 1개 이상 매핑
+- **중요도 상 (7개)**: S-001, S-003, S-008, S-009, S-012, S-013, S-015
+- **특이사항**: Step 0.5 참고 자료 질문은 생략 — 직전 learn-context에서 CX251104 자료가 이미 반영된 상태, PM이 "진행해줘"로 이어 승인
+- **PM 승인**: 가안 제시 → "진행해줘"로 승인
+- **다음 단계**: `/generate-testcases`
+
+---
+
+## [2026-04-15] 에듀탭(EduTap) QA 세션 시작 — learn-context 완료
+
+- **요청**: PM — "챗봇 테스트하고 싶어" → 서비스명 "에듀탭", 소개 "온라인 강의 플랫폼 1:1 튜터 챗봇" 제공. URL `https://edutap.ai/` + 챗봇 연동 강의 자료 아카이브(`CX251104.zip`) 업로드
+- **입력 수집**:
+  - `inputs/pm-notes-20260415.md` 생성 (PM 세션 발언 기록)
+  - `CX251104.zip` 업로드 후 cp949 인코딩으로 풀어 `inputs/CX251104/` 생성 (6개 클립: NCS 직업윤리, 머신러닝 기획, 컴활1급, KPoEM 파인튜닝, JavaScript ES6/ES11, 정보처리기사 네트워크 — 각 PDF+SRT)
+  - `inputs/IT.SW 및 직업 역량 마스터 과정 강의 정보.json` 추출 → 과정/클립 메타데이터 확보
+  - `inputs/index.md` 갱신
+- **웹 리서치 (Phase 1·2·3)**:
+  - Phase 1: `edutap.ai` 공식 랜딩 WebFetch — 콕스웨이브 제공, "학습 성과를 바꾸는 1:1 AI 튜터", SDK 연동, 강의 기반 답변
+  - Phase 2·3 병렬: WebSearch 3쿼리 + `zdnet.co.kr` / `platum.kr` 기사 WebFetch — 소크라테스식 학습법, 복습 퀴즈 자동 생성, 학습 대시보드, 검색 정확도 93.8%, 패스트캠퍼스·해커스 협업, 2025년 9월 출시
+  - `hellot.net`은 403 반환 — 스킵
+- **가안 작성**: `context/01~08` 파일 신규 작성, `context/index.md`에 @import 등록
+  - 01 Chatbot Identity / 02 Target Users / 03 Core Capabilities (+ 연동 6개 클립 표) / 04 User Flows (7개) / 05 Out-of-Scope / 06 Issues (RAG 6.2% 실패 등 7개 잠재 리스크) / 07 API Spec (미수집) / 08 User Logs (없음)
+- **PM 승인**: 가안 제시 → "진행해줘"로 승인 완료
+- **다음 단계**: `/generate-scenarios` 진입
+
+---
+
 ## [2026-04-14] QA 파이프라인 스킬 4종 수정 (참고 자료 / 멀티턴 / 스크립트 영속화 / re-anchor / 병렬 실행)
 
 - **요청**: PM — 파이프라인 실사용 중 발견한 4가지 마찰 지점

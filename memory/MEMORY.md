@@ -5,8 +5,8 @@
 
 ## 프로젝트 현황
 
-- 상태: Learn + Generate + Run 단계 구현 완료
-- QA 대상 챗봇: 미정
+- 상태: 에듀탭 QA 세션 진행 중 — 파이프라인 1~4단계 완료. run-simulation 결과 `sim-20260415-161835` (53 completed / 1 partial — TC-028 Turn 5 HTTP 429). 다음은 `/evaluate-results` (미구현)
+- QA 대상 챗봇: **에듀탭 (EduTap)** — 콕스웨이브의 온라인 강의 플랫폼 1:1 AI 튜터 챗봇. 본 세션은 `CX251104` "IT/SW 및 직업 역량 마스터 과정" (6개 클립, PDF+SRT 연동)을 지식 베이스로 함. API Spec은 미수집(run-simulation 직전 보충 예정)
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation` skills
 - 최근 변경: 파이프라인 스킬 4종 동시 수정 — (1) `/generate-scenarios`에 Step 0.5 "참고 자료 확인" 추가로 RAG·프롬프트 첨부 파일을 inputs/에 수집·context/ 갱신, (2) `/generate-testcases` TC 기본을 멀티턴(5~10턴)으로 전환(FAQ 포함, PM 명시·User Logs 예외), (3) `/run-simulation`에 `outputs/scripts/` 호출 스크립트 영속화 + TC flow 이탈 시 re-anchor 규칙(원본/실전송/비고 3필드) + TC 간 병렬 실행(기본 5, Rate Limit 한도 50% 자동 하향) + 429/503 지수 백오프 재시도(2→4→8s, `Retry-After` 우선) 추가. 직전: knowledge/ 제거 및 raw URL 직접 인용 구조 전환
 - 미구현: `/evaluate-results` 스킬, 서브에이전트 (TC 리뷰 등)
