@@ -440,6 +440,10 @@ def render_simulation_tc(text: str, abs_path: Path) -> str:
     )
 
 
+_TURN_FIELD_RE = re.compile(r"^- \*\*(요청 시각|응답 시간|상태|비고)\*\*:")
+_REF_HEADER_RE = re.compile(r"^- \*\*(reference|레퍼런스)")
+
+
 def _render_turn_block(turn_num: str, body: str, abs_path: Path) -> str:
     lines = body.split("\n")
     header_lines: list[str] = []
@@ -447,10 +451,11 @@ def _render_turn_block(turn_num: str, body: str, abs_path: Path) -> str:
     ref_lines: list[str] = []
     state = "header"
     for line in lines:
+        stripped = line.strip()
         if state == "header":
-            if line.strip() == "- **챗봇 응답**:":
+            if stripped == "- **챗봇 응답**:":
                 state = "response"
-            elif line.strip().startswith("- **reference"):
+            elif _REF_HEADER_RE.match(stripped):
                 state = "ref"
                 ref_lines.append(line)
             else:
@@ -458,16 +463,26 @@ def _render_turn_block(turn_num: str, body: str, abs_path: Path) -> str:
         elif state == "response":
             if line.startswith("    "):
                 response_lines.append(line[4:])
-            elif line.strip() == "":
+            elif stripped.startswith("> "):
+                response_lines.append(stripped[2:])
+            elif stripped == ">":
                 response_lines.append("")
-            elif line.strip().startswith("- **reference"):
+            elif stripped == "":
+                response_lines.append("")
+            elif _REF_HEADER_RE.match(stripped):
                 state = "ref"
                 ref_lines.append(line)
+            elif _TURN_FIELD_RE.match(stripped):
+                # Footer field after response — keep meta pill extraction working.
+                header_lines.append(line)
             else:
                 state = "ref"
                 ref_lines.append(line)
         else:
-            ref_lines.append(line)
+            if _TURN_FIELD_RE.match(stripped):
+                header_lines.append(line)
+            else:
+                ref_lines.append(line)
 
     fields: dict[str, str] = {}
     user_orig: str | None = None
