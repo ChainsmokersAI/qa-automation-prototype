@@ -20,7 +20,7 @@ PM(Product Manager)이 담당하는 챗봇에 대한 정보를 입력하면, 이
 | 2 | `/generate-scenarios` | 테스트 시나리오 생성 ("무엇을 테스트하는가") | `context/` → `outputs/scenarios/` |
 | 3 | `/generate-testcases` | 테스트 케이스 도출 ("어떻게 테스트하는가") | `outputs/scenarios/` + `context/` → `outputs/testcases/` |
 | 4 | `/run-simulation` | TC를 챗봇 API에 실행, 응답 기록 | `outputs/testcases/` + API Spec → `outputs/simulations/` |
-| 5 | *(예정)* | 시뮬레이션 결과를 TC 평가 기준에 따라 판정 | `outputs/simulations/` → 평가 결과 |
+| 5 | `/evaluate-results` | 시뮬레이션 결과를 TC 평가 기준에 따라 판정 (LLM-as-judge) | `outputs/simulations/` → 평가 결과 (in-place) |
 
 - 1단계에서 API Spec을 수집하지 못해도 4단계 전까지 보충 가능
 - 4단계 실행에는 API Spec 필수 항목 충족 필요 (상세 검증 기준은 `/run-simulation` 스킬 참조)
