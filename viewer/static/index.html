@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QA Document Viewer</title>
+    <link rel="stylesheet" href="/assets/pygments.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <aside id="sidebar">
+      <header class="brand">
+        <h1>QA Viewer</h1>
+        <span id="status-dot" class="status-dot" title="연결 끊김"></span>
+      </header>
+      <ul id="categories">
+        <li class="cat cat-inputs" data-cat="inputs">
+          <div class="cat-header">
+            <span class="cat-name">inputs</span>
+            <span class="cat-dirty" title="새 변경"></span>
+          </div>
+          <div class="cat-body">
+            <ul class="tree"></ul>
+          </div>
+        </li>
+        <li class="cat cat-context" data-cat="context">
+          <div class="cat-header">
+            <span class="cat-name">context</span>
+            <span class="cat-dirty" title="새 변경"></span>
+          </div>
+          <div class="cat-body"><ul class="tree"></ul></div>
+        </li>
+        <li class="cat cat-scenarios" data-cat="scenarios">
+          <div class="cat-header">
+            <span class="cat-name">scenarios</span>
+            <span class="cat-dirty" title="새 변경"></span>
+          </div>
+          <div class="cat-body"><ul class="tree"></ul></div>
+        </li>
+        <li class="cat cat-testcases" data-cat="testcases">
+          <div class="cat-header">
+            <span class="cat-name">testcases</span>
+            <span class="cat-dirty" title="새 변경"></span>
+          </div>
+          <div class="cat-body"><ul class="tree"></ul></div>
+        </li>
+        <li class="cat cat-simulations" data-cat="simulations">
+          <div class="cat-header">
+            <span class="cat-name">simulations</span>
+            <span class="cat-dirty" title="새 변경"></span>
+          </div>
+          <div class="cat-body"><ul class="tree"></ul></div>
+        </li>
+      </ul>
+      <footer id="sidebar-footer">
+        <div id="dropzone">
+          <label class="upload-btn">
+            <input type="file" id="file-input" multiple hidden />
+            파일 추가 (inputs/)
+          </label>
+          <div class="dz-hint">드래그&드롭도 가능</div>
+          <div id="upload-status"></div>
+        </div>
+      </footer>
+    </aside>
+    <main id="main">
+      <header id="breadcrumb"><span class="muted">왼쪽에서 파일을 선택하세요</span></header>
+      <article id="content"></article>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
