@@ -480,6 +480,11 @@ def _render_turn_block(turn_num: str, body: str, abs_path: Path) -> str:
         if state == "header":
             if stripped == "- **챗봇 응답**:":
                 state = "response"
+            elif stripped.startswith("- **챗봇 응답**:"):
+                state = "response"
+                inline = stripped[len("- **챗봇 응답**:"):].strip()
+                if inline:
+                    response_lines.append(inline)
             elif _REF_HEADER_RE.match(stripped):
                 state = "ref"
                 ref_lines.append(line)
@@ -501,8 +506,7 @@ def _render_turn_block(turn_num: str, body: str, abs_path: Path) -> str:
                 # Footer field after response — keep meta pill extraction working.
                 header_lines.append(line)
             else:
-                state = "ref"
-                ref_lines.append(line)
+                response_lines.append(line)
         else:
             if _TURN_FIELD_RE.match(stripped):
                 header_lines.append(line)

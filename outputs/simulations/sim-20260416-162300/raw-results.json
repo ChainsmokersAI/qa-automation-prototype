@@ -1,0 +1,1823 @@
+[
+  {
+    "tc_id": "TC-001",
+    "scenario": "S-001",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 14342,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:56.772453+00:00",
+        "user_msg_original": "브릿지가 정확히 뭐하는 장비에요? 허브랑 뭐가 달라요?",
+        "user_msg_sent": "브릿지가 정확히 뭐하는 장비에요? 허브랑 뭐가 달라요?",
+        "response": "**브릿지는 서로 다른 네트워크 세그먼트를 연결하여 데이터 통신을 효율적으로 제어하는 장비입니다.**\n\n- **브릿지**는 랜과 랜을 연결하거나 랜 내부의 컴퓨터 그룹을 연결하여 트래픽을 관리합니다.\n- **허브**는 단순히 신호를 증폭하여 모든 포트로 전달하지만, 브릿지는 목적지 주소를 확인하여 필요한 경로로만 데이터를 전송합니다.\n- 이러한 지능적 필터링 기능을 통해 네트워크의 전체적인 충돌 도메인을 분리하고 성능을 최적화합니다.\n\n네트워크의 효율적인 운영을 위해 브릿지의 역할을 명확히 이해하는 것이 중요합니다.\n\n",
+        "elapsed_ms": 14342,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[정보처리기사] 네트워크 관련 장비.srt",
+            "description": "Mac 계층의 브리지는 랜과 랜을 연결하는 장치이다.",
+            "summary": "Mac 계층에서 사용되는 브리지는 내부 네트워크의 여러 서브넷을 연결하는 장치로, 랜과 랜을 연결해주는 역할을 한다. 컴퓨터 그룹 세그먼트를 연결하는 기능을 수행한다.",
+            "location": "0:00:06-0:00:39",
+            "url": null,
+            "score": 0.43833068,
+            "material_id": "",
+            "clip_id": "CX251104_1_6"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "description": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "summary": "브리지는 LAN 간 및 세그먼트 간 연결을 담당하며 MAC 주소 기반으로 패킷을 전달해 트래픽 병목을 완화하고 보안성을 높인다. 데이터 링크 계층은 LLC와 MAC으로 구성되어 연결 유지와 물리 매체 접근을 제어하며, 리피터는 물리 계층에서 신호 감쇠를 보정해 전송 거리를 연장한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.320290565,
+            "material_id": "c3380d16-a08a-4b36-a54f-319dc72a25b2",
+            "clip_id": "CX251104_1_6"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-002",
+    "scenario": "S-001",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 2327,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:40.733936+00:00",
+        "user_msg_original": "머신러닝으로 데이터 분석하려면 어떤 순서로 진행해야 돼요?",
+        "user_msg_sent": "머신러닝으로 데이터 분석하려면 어떤 순서로 진행해야 돼요?",
+        "response": "학습 로드맵을 생성하기 위해서는 학습자 진단이 필요해요.",
+        "elapsed_ms": 2327,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_2",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_2",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-003",
+    "scenario": "S-001",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 13684,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:50.539760+00:00",
+        "user_msg_original": "ES6에서 shorthand property가 뭔지 설명해주세요",
+        "user_msg_sent": "ES6에서 shorthand property가 뭔지 설명해주세요",
+        "response": "**객체 속성 축약(Shorthand Property)은 객체 생성 시 키와 변수명이 동일할 때 이를 하나로 생략하여 작성하는 ES6 문법입니다.**\n\n- 객체의 키와 값이 가리키는 변수명이 같으면 중복을 피하고 코드를 간결하게 유지할 수 있습니다.\n- 기존 방식과 달리 키와 값을 한 번만 명시하여 가독성을 높이는 것이 핵심입니다.\n- 데이터 구조를 정의할 때 불필요한 반복을 줄여 효율적인 코딩이 가능합니다.\n\n이 문법을 활용하면 객체 선언을 더욱 깔끔하게 정리할 수 있습니다.\n\n",
+        "elapsed_ms": 13684,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "description": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "summary": "ES6의 Spread 문법은 배열 및 객체 복사, 배열 병합, 객체 병합에 사용된다. 기본 매개변수는 함수 인자가 없을 때 기본값을 설정해 주어 유용하며 코드 가독성을 높인다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.605009079,
+            "material_id": "68dd9f92-0079-44af-935f-eb117bd1a336",
+            "clip_id": "CX251104_1_5"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[자바스크립트] 최신 문법 (ES6, ES11) 모르면 후회 하는 최신 문법과 사용법 정리.srt",
+            "description": "스프레드 연산자로 배열을 복사하고 새 아이템을 추가하는 방법 설명.",
+            "summary": "배열 복사는 스프레드 연산자를 사용해 간단히 할 수 있으며, 복사된 배열에 새로운 아이템을 쉽게 추가할 수 있다. 이렇게 하면 원본 배열과 복사된 배열 모두 동일한 아이템을 가지고 출력된다.",
+            "location": "0:01:04-0:01:40",
+            "url": null,
+            "score": 0.373823166,
+            "material_id": "",
+            "clip_id": "CX251104_1_5"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_5",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_5",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-004",
+    "scenario": "S-001",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 38899,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:17.872973+00:00",
+        "user_msg_original": "파인튜닝이 뭐예요? 그냥 처음부터 학습시키는 거랑 뭐가 다른 거예요?",
+        "user_msg_sent": "파인튜닝이 뭐예요? 그냥 처음부터 학습시키는 거랑 뭐가 다른 거예요?",
+        "response": "**파인튜닝은 범용 AI 모델을 특정 분야의 전문가로 재학습시키는 과정입니다.**\n\n- 이미 기초 소양을 갖춘 모델에 연구 목적에 맞는 데이터를 추가로 학습시켜 규칙을 도출합니다.\n- 처음부터 학습시키는 것은 막대한 비용과 시간이 들지만, 파인튜닝은 이미 학습된 모델을 조율하여 효율적입니다.\n- 복잡한 현상 속에서 데이터에 내재된 규칙을 모델이 스스로 이해하게 만드는 것이 핵심입니다.\n\n전문가로 거듭나기 위한 필수적인 미세 조정 과정입니다.\n\n",
+        "elapsed_ms": 13023,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "파인튜닝을 통한 KPoEM 모델 구현.srt",
+            "description": "K4M 데이터셋을 활용한 파인튜닝으로 모델 성능을 향상시킵니다.",
+            "summary": "K4M 입문 데이터셋을 활용해 파인튜닝으로 딥러닝 모델 성능을 특정 분야에 맞게 향상시키는 방법을 설명합니다. MNIST와 같은 대표 데이터셋과 입문 데이터셋의 차이를 이해하며, 힘들게 만든 데이터를 효과적으로 활용하는 중요성을 강조합니다.",
+            "location": "0:02:02-0:03:04",
+            "url": null,
+            "score": 0.53799057,
+            "material_id": "",
+            "clip_id": "CX251104_1_4"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Optuna로 하이퍼파라미터를 자동 최적화하며 PyTorch Lightning으로 모델을 학습한다.",
+            "description": "Optuna로 하이퍼파라미터를 자동 최적화하며 PyTorch Lightning으로 모델을 학습한다.",
+            "summary": "모델 학습 미세조정 단계에서는 준비된 데이터와 모델 파이프라인으로 학습을 실행한다. PyTorch Lightning의 Trainer가 학습 루프를 자동화하며, ModelCheckpoint 콜백으로 최적 모델을 저장한다. Optuna는 하이퍼파라미터 튜닝을 자동화하여 최적 조합을 탐색하며, Objective 함수 정의, 탐색 공간 지정, 모델 학습 및 평가, 성능 반환 과정을 거친다.",
+            "location": "3-3",
+            "url": null,
+            "score": 0.390975028,
+            "material_id": "60481a95-3e2f-4f0f-8c52-b6d7718676b5",
+            "clip_id": "CX251104_1_4"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:36:30.896101+00:00",
+        "user_msg_original": "그럼 KPoEM이라는 모델은 어떤 데이터로 파인튜닝한 거예요?",
+        "user_msg_sent": "그럼 KPoEM이라는 모델은 어떤 데이터로 파인튜닝한 거예요?",
+        "response": "**KPoEM 모델은 한국 근대시의 감정을 식별하기 위해 구축된 K4M 데이터셋을 사용하여 파인튜닝되었습니다.**\n\n- 파운데이션 모델에 K4M 데이터를 추가로 학습시켜 모델 내부의 파라미터를 최적화합니다.\n- 이 과정은 막대한 비용과 시간 없이도 특정 분야에서 높은 성능을 내는 모델을 만드는 효율적인 방법입니다.\n- K4M 데이터셋은 한국 근대시의 감정을 분류하는 데 특화된 학습 자료입니다.\n\n학습된 모델을 특정 목적에 맞게 조율하는 과정이 바로 파인튜닝의 핵심입니다.\n\n",
+        "elapsed_ms": 13139,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Optuna로 하이퍼파라미터를 자동 최적화하며 PyTorch Lightning으로 모델을 학습한다.",
+            "description": "Optuna로 하이퍼파라미터를 자동 최적화하며 PyTorch Lightning으로 모델을 학습한다.",
+            "summary": "모델 학습 미세조정 단계에서는 준비된 데이터와 모델 파이프라인으로 학습을 실행한다. PyTorch Lightning의 Trainer가 학습 루프를 자동화하며, ModelCheckpoint 콜백으로 최적 모델을 저장한다. Optuna는 하이퍼파라미터 튜닝을 자동화하여 최적 조합을 탐색하며, Objective 함수 정의, 탐색 공간 지정, 모델 학습 및 평가, 성능 반환 과정을 거친다.",
+            "location": "3-3",
+            "url": null,
+            "score": 0.609697402,
+            "material_id": "60481a95-3e2f-4f0f-8c52-b6d7718676b5",
+            "clip_id": "CX251104_1_4"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "파인튜닝을 통한 KPoEM 모델 구현.srt",
+            "description": "파인튜닝은 양질의 전공 데이터로 모델을 전문가 수준으로 향상시킵니다.",
+            "summary": "파인튜닝은 기본적인 읽기 쓰기 능력을 가진 모델에 전공 입문 데이터셋을 학습시켜 특정 분야의 전문가로 만드는 과정입니다. 한국 고전 번역원의 한문고전 자동 번역 서비스는 파인튜닝을 활용해 현대어 번역의 한계를 극복한 성공 사례로, 목적에 맞는 양질의 데이터 중요성을 보여줍니다.",
+            "location": "0:04:05-0:05:07",
+            "url": null,
+            "score": 0.564240456,
+            "material_id": "",
+            "clip_id": "CX251104_1_4"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:36:44.035931+00:00",
+        "user_msg_original": "입문 데이터셋을 만드는 게 왜 어렵다고 했죠?",
+        "user_msg_sent": "입문 데이터셋을 만드는 게 왜 어렵다고 했죠?",
+        "response": "**입문 데이터셋 구축은 방대한 시간과 노력이 요구되는 고도의 작업입니다.**\n\n- 데이터의 품질을 확보하기 위해 전문가가 직접 자료를 선별하고 분류하는 과정이 필수적입니다.\n- 단순히 양적인 데이터를 모으는 것을 넘어, 모델이 학습할 수 있는 정제된 형태의 규칙을 생성해야 합니다.\n- 데이터의 일관성을 유지하며 특정 분야의 특성을 반영하는 과정에서 많은 자원이 소모됩니다.\n\n데이터의 가치는 그 데이터를 준비하는 과정의 정교함에서 결정됩니다.\n\n",
+        "elapsed_ms": 12736,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "파인튜닝을 통한 KPoEM 모델 구현.srt",
+            "description": "테스트 데이터로 모델의 일반화 성능을 객관적으로 평가합니다.",
+            "summary": "옵튜나는 여러 조합의 하이퍼파라미터를 체계적으로 탐색해 최적의 모델을 찾습니다. 최종 모델은 새로운 테스트 데이터셋으로 평가되며, 이는 모델의 일반화 성능을 객관적으로 측정합니다. 정확도 외에도 불균형 데이터에 적합한 정밀도와 재현율 등의 다양한 평가 지표가 사용됩니다.",
+            "location": "0:00:00-0:01:01",
+            "url": null,
+            "score": 0.517967224,
+            "material_id": "",
+            "clip_id": "CX251104_1_4"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "KPoEM 모델은 고품질 데이터로 복잡한 인간 감성을 효과적으로 학습한다.",
+            "description": "KPoEM 모델은 고품질 데이터로 복잡한 인간 감성을 효과적으로 학습한다.",
+            "summary": "컴퓨터가 복잡한 인간 감정을 학습·분류할 수 있음을 보여주며, 고품질 데이터셋(KPoEM)의 중요성을 입증한다. 이는 AI 성능이 데이터 양뿐 아니라 질에 의해 결정되며, 인문학과 기술 융합으로 새로운 학술 및 문화 콘텐츠 창출 가능성을 제시한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.335813552,
+            "material_id": "60481a95-3e2f-4f0f-8c52-b6d7718676b5",
+            "clip_id": "CX251104_1_4"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_4",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_4",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-005",
+    "scenario": "S-002",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 42232,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:40.733727+00:00",
+        "user_msg_original": "직업윤리가 왜 중요해요? 그냥 일만 잘하면 되는 거 아닌가요?",
+        "user_msg_sent": "직업윤리가 왜 중요해요? 그냥 일만 잘하면 되는 거 아닌가요?",
+        "response": "**직업윤리는 전문가로서 사회적 책무를 다하고 공동체에 긍정적인 영향을 미치기 위해 필수적입니다.**\n\n- 단순히 일을 잘하는 것을 넘어, 자신의 직무가 사회 공동체에 미치는 영향을 인식하고 봉사하는 태도가 필요합니다.\n- 철저한 전문가가 되기 위해 끊임없이 학습하며, 책임감과 정직함 등 올바른 가치관을 갖추는 것이 중요합니다.\n- 직업윤리는 개인의 성장을 도울 뿐만 아니라 사회 전체의 신뢰성을 높이는 핵심적인 기반이 됩니다.\n\n직업윤리는 개인의 역량을 넘어 사회적 책임을 완수하는 전문가의 핵심 덕목입니다.\n\n",
+        "elapsed_ms": 14698,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "직업윤리는 사회 규범에 따른 신념과 태도로 올바른 직무수행을 의미한다.",
+            "description": "직업윤리는 사회 규범에 따른 신념과 태도로 올바른 직무수행을 의미한다.",
+            "summary": "윤리는 사회적 존재로서 올바른 질서인 도리를 의미하며, 직업윤리는 직무 수행 시 조직과 사회 규범에 부합하는 신념·태도·행위 체계다. 윤리는 사회적 상호작용과 시대성에 따라 형성되고 변화하며, 신뢰와 협력이 유지되어야 지속가능하다. 직업은 경제적 안정과 자아실현, 사회적 인정에 기여한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.622600555,
+            "material_id": "228ba3f8-648a-4869-96cc-808c6b20c166",
+            "clip_id": "CX251104_1_1"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[NCS 직업기초능력] 직업윤리.srt",
+            "description": "직업 윤리는 사회 질서와 국가 경쟁력에 중요한 역할을 한다.",
+            "summary": "직업 윤리는 각 직업과 성격에 따라 다르지만, 모든 직업인에게 공통적으로 요구되는 일반적인 윤리가 존재한다. 직업 윤리는 개인 차원을 넘어 사회 질서와 발전에 중요한 역할을 하며, 부패 방지와 청렴도 유지는 국가 경쟁력 향상에 필수적이다.",
+            "location": "0:26:39-0:27:39",
+            "url": null,
+            "score": 0.610631943,
+            "material_id": "",
+            "clip_id": "CX251104_1_1"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:34:55.432059+00:00",
+        "user_msg_original": "음... 동료한테 신뢰를 못 받으면 같이 일하기 힘들겠죠?",
+        "user_msg_sent": "음... 동료한테 신뢰를 못 받으면 같이 일하기 힘들겠죠?",
+        "response": "**동료 간의 신뢰 부족은 협업의 효율성을 저해하고 윤리적 갈등을 유발하는 핵심 요인입니다.**\n\n- 신뢰가 없는 관계에서는 상대의 배신을 우려하여 최선의 협력 대신 방어적인 태도를 취하게 됩니다.\n- 이러한 불신은 결국 공동의 목표를 달성하기보다 각자의 이익만을 챙기는 비효율적인 상황을 초래합니다.\n- 직업윤리는 동료와의 신뢰를 바탕으로 공동의 성과를 창출하는 필수적인 기반이 됩니다.\n\n신뢰가 무너진 조직은 개인의 역량 발휘를 어렵게 만들며 결국 모두에게 손해를 끼치는 결과를 낳습니다.\n\n",
+        "elapsed_ms": 13796,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[NCS 직업기초능력] 직업윤리.srt",
+            "description": "침묵과 자백 선택에서 신뢰 부족이 윤리적 갈등과 불리한 결과를 초래한다.",
+            "summary": "이 내용은 침묵과 자백에 따른 형량 차이와 신뢰 문제를 다루며, 상대방을 믿지 못해 모두가 자백하는 결과를 설명한다. 침묵할 경우 불리한 처벌을 받을 수 있기에 윤리적 갈등과 심리적 압박이 발생한다.",
+            "location": "0:04:12-0:05:13",
+            "url": null,
+            "score": 0.389785767,
+            "material_id": "",
+            "clip_id": "CX251104_1_1"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "직업윤리는 사회 규범에 따른 신념과 태도로 올바른 직무수행을 의미한다.",
+            "description": "직업윤리는 사회 규범에 따른 신념과 태도로 올바른 직무수행을 의미한다.",
+            "summary": "윤리는 사회적 존재로서 올바른 질서인 도리를 의미하며, 직업윤리는 직무 수행 시 조직과 사회 규범에 부합하는 신념·태도·행위 체계다. 윤리는 사회적 상호작용과 시대성에 따라 형성되고 변화하며, 신뢰와 협력이 유지되어야 지속가능하다. 직업은 경제적 안정과 자아실현, 사회적 인정에 기여한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.316179276,
+            "material_id": "228ba3f8-648a-4869-96cc-808c6b20c166",
+            "clip_id": "CX251104_1_1"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:35:09.228672+00:00",
+        "user_msg_original": "성실하게 일하고 약속을 잘 지키는 거?",
+        "user_msg_sent": "성실하게 일하고 약속을 잘 지키는 거?",
+        "response": "**성실함과 책임감은 직업인이 갖추어야 할 핵심적인 직업윤리 덕목입니다.**\n\n- 성실하고 정직하며 약속을 지키는 태도는 동료와의 신뢰를 형성하는 기초가 됩니다.\n- 이러한 덕목은 단순히 개인의 성과를 넘어 공동체 전체의 신뢰성을 높이는 역할을 합니다.\n- 준법의식과 책임감을 갖춘 전문가는 사회적 책무를 다하며 지속적으로 성장합니다.\n\n올바른 직업윤리는 개인의 성장을 넘어 사회 공동체에 긍정적인 영향을 미치는 전문가의 필수 자질입니다.\n\n",
+        "elapsed_ms": 13737,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[NCS 직업기초능력] 직업윤리.srt",
+            "description": "직업 윤리는 사회 질서와 국가 경쟁력에 중요한 역할을 한다.",
+            "summary": "직업 윤리는 각 직업과 성격에 따라 다르지만, 모든 직업인에게 공통적으로 요구되는 일반적인 윤리가 존재한다. 직업 윤리는 개인 차원을 넘어 사회 질서와 발전에 중요한 역할을 하며, 부패 방지와 청렴도 유지는 국가 경쟁력 향상에 필수적이다.",
+            "location": "0:26:39-0:27:39",
+            "url": null,
+            "score": 0.382434845,
+            "material_id": "",
+            "clip_id": "CX251104_1_1"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "원칙 기반 의사결정은 7단계 절차로 윤리적 딜레마를 해결한다.",
+            "description": "원칙 기반 의사결정은 7단계 절차로 윤리적 딜레마를 해결한다.",
+            "summary": "원칙 기반 의사결정 프레임은 사실 확인, 원칙 점검, 이해관계자 영향 분석, 대안 도출, 비교 평가, 결정 및 실행, 사후 평가의 7단계로 구성된다. 교통경찰과 친구 위반 사례, 의사와 흉악범 환자 사례를 통해 이해상충 회피와 윤리 우선 원칙을 강조한다. 윤리와 직업윤리의 개념, 직업의 5요소, 딜레마 해법 루틴, 핵심 덕목을 정리했다.",
+            "location": "2-2",
+            "url": null,
+            "score": 0.313396454,
+            "material_id": "228ba3f8-648a-4869-96cc-808c6b20c166",
+            "clip_id": "CX251104_1_1"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_1",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_1",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-006",
+    "scenario": "S-002",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 13217,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:09.144238+00:00",
+        "user_msg_original": "회사에서 네트워크 장비를 고를 때 뭘 기준으로 골라야 해요?",
+        "user_msg_sent": "회사에서 네트워크 장비를 고를 때 뭘 기준으로 골라야 해요?",
+        "response": "**네트워크 장비 선택은 관리 효율성과 네트워크 분리 목적에 따라 결정됩니다.**\n\n- 네트워크를 분리하여 관리의 편의성을 높이고자 한다면 **브릿지** 기능을 고려해야 합니다.\n- 외부 네트워크와의 연결이 필요하다면 **라우터**의 기능을 확인해야 합니다.\n- 두 기능을 모두 갖춘 **브라우더**를 선택하면 복합적인 네트워크 환경을 효율적으로 구성할 수 있습니다.\n\n학습자의 네트워크 구성 목적에 맞는 장비를 선택하는 것이 중요합니다.\n\n",
+        "elapsed_ms": 13217,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "스위치와 라우터 등 네트워크 장비의 역할과 기능을 설명합니다.",
+            "description": "스위치와 라우터 등 네트워크 장비의 역할과 기능을 설명합니다.",
+            "summary": "리피터는 신호 증폭만 하여 충돌 도메인을 줄이지 못해 단거리 LAN 확장에 주로 사용됩니다. 스위치는 MAC 주소를 기반으로 효율적인 데이터 전달로 충돌 도메인 감소에 기여하며, 하드웨어 처리로 고속 전송을 지원합니다. 라우터는 IP 기반 패킷 전달과 라우팅, 보안 기능을 제공하며 인터넷 연결에 필수적입니다. 브라우터는 브리지와 라우터 기능을 통합한 다기능 장비로 기업 환경에서 활용됩니다.",
+            "location": "2-2",
+            "url": null,
+            "score": 0.48002246,
+            "material_id": "c3380d16-a08a-4b36-a54f-319dc72a25b2",
+            "clip_id": "CX251104_1_6"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[정보처리기사] 네트워크 관련 장비.srt",
+            "description": "브릿지는 내부 랜 연결, 라우터는 내부와 외부 네트워크 연결을 담당한다.",
+            "summary": "부서별로 각기 다른 서브넷을 만들고, 부서별 랜을 연결하는 기능을 브릿지가 담당한다. 라우터는 내부 네트워크와 외부 네트워크를 연결하는 역할을 하며, 두 기능을 모두 갖춘 장비도 존재한다.",
+            "location": "0:15:19-0:15:53",
+            "url": null,
+            "score": 0.407217026,
+            "material_id": "",
+            "clip_id": "CX251104_1_6"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-007",
+    "scenario": "S-002",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 37567,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:39.874106+00:00",
+        "user_msg_original": "데이터 분석을 시작하려면 뭐부터 해야 돼요?",
+        "user_msg_sent": "데이터 분석을 시작하려면 뭐부터 해야 돼요?",
+        "response": "**데이터 분석의 첫 단계는 해결하고자 하는 문제를 명확히 이해하는 것입니다.**\n\n- 분석 대상인 비즈니스 도메인에 대한 이해를 바탕으로 문제를 파악하고 재정의하는 과정을 반복해야 합니다.\n- 이러한 반복 과정을 통해 분석의 목적과 필요한 데이터에 대한 이해가 명확해집니다.\n- 문제 정의가 완료되면 분석에 필요한 데이터를 수집하는 단계로 나아갑니다.\n\n체계적인 문제 정의가 성공적인 분석의 시작점입니다.\n\n",
+        "elapsed_ms": 12643,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[빅데이터 분석] 머신러닝 기반 데이터 분석 기획.srt",
+            "description": "데이터 수집과 전처리는 머신러닝 기반 데이터 분석의 필수 과정이다.",
+            "summary": "분석을 위해 이미 주어진 데이터가 있을 수 있지만, 추가 데이터 수집이 필요할 때도 있다. 내부 저장소나 빅데이터 플랫폼에서 추출하거나, 외부 웹사이트나 API를 통해 데이터를 수집한다. 수집된 원시 데이터는 머신러닝 적용 전 전처리와 변환이 필요하다.",
+            "location": "0:09:27-0:10:31",
+            "url": null,
+            "score": 0.5679245,
+            "material_id": "",
+            "clip_id": "CX251104_1_2"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "머신러닝 기반 데이터 분석은 체계적 기획과 데이터 이해가 핵심이다.",
+            "description": "머신러닝 기반 데이터 분석은 체계적 기획과 데이터 이해가 핵심이다.",
+            "summary": "- 머신러닝 기반 데이터 분석 기획은 데이터를 이해하고 문제 정의부터 시작하여 적절한 분석 방법을 선택하는 과정이다.\n- 데이터 전처리, 모델 선택, 평가 및 개선 단계를 포함해 효과적인 분석 결과를 도출하도록 체계적으로 진행한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.452442169,
+            "material_id": "d6d3044e-8cf3-4c7d-a0fb-c2ce239cdb07",
+            "clip_id": "CX251104_1_2"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:35:52.518082+00:00",
+        "user_msg_original": "음 뭘 알고 싶은지 먼저 정해야 하나요?",
+        "user_msg_sent": "음 뭘 알고 싶은지 먼저 정해야 하나요?",
+        "response": "**문제 정의는 분석의 목적과 방향을 결정하는 핵심 과정입니다.**\n\n- 해결하고자 하는 문제를 명확히 이해하고 비즈니스 도메인에 대한 이해를 높여야 합니다.\n- 문제를 파악하고 재정의하는 과정을 반복하며 분석의 목적을 구체화합니다.\n- 이러한 과정을 통해 어떤 머신러닝 기법을 적용할지 잠정적인 의사결정을 내릴 수 있습니다.\n\n명확한 문제 정의가 있어야 올바른 분석 기법을 선택할 수 있습니다.\n\n",
+        "elapsed_ms": 12628,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[빅데이터 분석] 머신러닝 기반 데이터 분석 기획.srt",
+            "description": "데이터 수집과 전처리는 머신러닝 기반 데이터 분석의 필수 과정이다.",
+            "summary": "분석을 위해 이미 주어진 데이터가 있을 수 있지만, 추가 데이터 수집이 필요할 때도 있다. 내부 저장소나 빅데이터 플랫폼에서 추출하거나, 외부 웹사이트나 API를 통해 데이터를 수집한다. 수집된 원시 데이터는 머신러닝 적용 전 전처리와 변환이 필요하다.",
+            "location": "0:09:27-0:10:31",
+            "url": null,
+            "score": 0.27624321,
+            "material_id": "",
+            "clip_id": "CX251104_1_2"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "머신러닝 기반 데이터 분석은 체계적 기획과 데이터 이해가 핵심이다.",
+            "description": "머신러닝 기반 데이터 분석은 체계적 기획과 데이터 이해가 핵심이다.",
+            "summary": "- 머신러닝 기반 데이터 분석 기획은 데이터를 이해하고 문제 정의부터 시작하여 적절한 분석 방법을 선택하는 과정이다.\n- 데이터 전처리, 모델 선택, 평가 및 개선 단계를 포함해 효과적인 분석 결과를 도출하도록 체계적으로 진행한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.225288391,
+            "material_id": "d6d3044e-8cf3-4c7d-a0fb-c2ce239cdb07",
+            "clip_id": "CX251104_1_2"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:36:05.146371+00:00",
+        "user_msg_original": "데이터를 모아야 하지 않을까요?",
+        "user_msg_sent": "데이터를 모아야 하지 않을까요?",
+        "response": "**데이터 수집은 문제 정의 이후 분석을 수행하기 위한 필수적인 단계입니다.**\n\n- 문제 정의를 통해 분석 목적과 필요한 데이터가 명확해지면 데이터를 수집합니다.\n- 수집된 데이터는 이후 머신러닝 기법을 적용하여 분석을 진행하는 기초가 됩니다.\n- 데이터 수집은 분석의 방향성을 실질적으로 구현하는 중요한 과정입니다.\n\n체계적인 문제 정의를 마친 후 데이터를 수집하는 것은 분석의 성공을 위한 다음 단계입니다.\n\n",
+        "elapsed_ms": 12294,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[빅데이터 분석] 머신러닝 기반 데이터 분석 기획.srt",
+            "description": "데이터 수집과 전처리는 머신러닝 기반 데이터 분석의 필수 과정이다.",
+            "summary": "분석을 위해 이미 주어진 데이터가 있을 수 있지만, 추가 데이터 수집이 필요할 때도 있다. 내부 저장소나 빅데이터 플랫폼에서 추출하거나, 외부 웹사이트나 API를 통해 데이터를 수집한다. 수집된 원시 데이터는 머신러닝 적용 전 전처리와 변환이 필요하다.",
+            "location": "0:09:27-0:10:31",
+            "url": null,
+            "score": 0.355428696,
+            "material_id": "",
+            "clip_id": "CX251104_1_2"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "머신러닝은 데이터 기반 예측 및 모델 개선을 위한 인공지능 기술이다.",
+            "description": "머신러닝은 데이터 기반 예측 및 모델 개선을 위한 인공지능 기술이다.",
+            "summary": "머신러닝은 인공지능의 한 분야로 기존 모델을 개선하거나 예측하는 기술이다. 유전자 분석, 로보틱스 등 다양한 현실 분야에 적용된다. 머신러닝 알고리즘은 지도학습과 비지도학습으로 나뉘며, 지도학습은 독립변수와 반응변수의 관계를 파악해 미래를 예측하는 기법으로 회귀분석 등이 있다.",
+            "location": "4-4",
+            "url": null,
+            "score": 0.312459975,
+            "material_id": "d6d3044e-8cf3-4c7d-a0fb-c2ce239cdb07",
+            "clip_id": "CX251104_1_2"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_2",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_2",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-008",
+    "scenario": "S-003",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 2118,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:17.441117+00:00",
+        "user_msg_original": "네트워크 장비 강의 복습 퀴즈 내주세요",
+        "user_msg_sent": "네트워크 장비 강의 복습 퀴즈 내주세요",
+        "response": "강의를 복습할 수 있는 퀴즈를 내드릴게요.",
+        "elapsed_ms": 2117,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-009",
+    "scenario": "S-003",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 26790,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:37:44.831053+00:00",
+        "user_msg_original": "네트워크 장비 퀴즈 풀어볼래요",
+        "user_msg_sent": "네트워크 장비 퀴즈 풀어볼래요",
+        "response": "강의를 복습할 수 있는 퀴즈를 내드릴게요.",
+        "elapsed_ms": 1961,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:37:46.792953+00:00",
+        "user_msg_original": "음 브릿지는 인터넷을 연결해주는 장비 아닌가요?",
+        "user_msg_sent": "음 브릿지는 인터넷을 연결해주는 장비 아닌가요?",
+        "response": "**브릿지는 부서별로 나뉜 내부 네트워크(LAN)를 서로 연결해 주는 장비입니다.**\n\n- 브릿지는 내부의 부서별로 나누어진 랜을 서로 연결하는 기능을 수행합니다.\n- 외부 네트워크와 연결하는 장비는 라우터이며, 브릿지는 내부망 연결에 특화되어 있습니다.\n- 인터넷 연결은 주로 라우터의 역할이므로 브릿지와는 목적이 다릅니다.\n\n학습하신 내용을 바탕으로 장비별 고유 목적을 명확히 구분하시기 바랍니다.\n\n",
+        "elapsed_ms": 12319,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[정보처리기사] 네트워크 관련 장비.srt",
+            "description": "라우터와 게이트웨이는 네트워크 연결 시 꼭 필요한 장비이다.",
+            "summary": "다양한 회사에서 여러 대의 컴퓨터를 허브나 스위치로 연결해 네트워크를 구성하고 인터넷과 연결할 때, 라우터나 게이트웨이 같은 장비를 사용한다. 브릿지는 동일 네트워크 내 랜을 연결할 때 사용하는 장비로, 서로 다른 네트워크를 연결할 때는 사용하지 않는다.",
+            "location": "0:15:51-0:16:26",
+            "url": null,
+            "score": 0.570345,
+            "material_id": "",
+            "clip_id": "CX251104_1_6"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "description": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "summary": "브리지는 LAN 간 및 세그먼트 간 연결을 담당하며 MAC 주소 기반으로 패킷을 전달해 트래픽 병목을 완화하고 보안성을 높인다. 데이터 링크 계층은 LLC와 MAC으로 구성되어 연결 유지와 물리 매체 접근을 제어하며, 리피터는 물리 계층에서 신호 감쇠를 보정해 전송 거리를 연장한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.461681366,
+            "material_id": "c3380d16-a08a-4b36-a54f-319dc72a25b2",
+            "clip_id": "CX251104_1_6"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:37:59.112242+00:00",
+        "user_msg_original": "아 그러면 LAN끼리 연결해주는 건가요?",
+        "user_msg_sent": "아 그러면 LAN끼리 연결해주는 건가요?",
+        "response": "**브릿지는 서로 다른 LAN을 연결하거나 하나의 LAN 내 컴퓨터 그룹을 연결하는 장비입니다.**\n\n- 브릿지는 물리적으로 분리된 네트워크 세그먼트 간의 통신을 가능하게 합니다.\n- 부서별로 나뉜 내부 네트워크를 효율적으로 통합하여 관리할 수 있게 돕습니다.\n- 단순히 인터넷을 연결하는 것이 아니라 내부망의 구조를 확장하는 역할을 수행합니다.\n\n네트워크의 효율적인 구성을 위해 브릿지의 역할을 정확히 이해하는 것이 중요합니다.\n\n",
+        "elapsed_ms": 12509,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[정보처리기사] 네트워크 관련 장비.srt",
+            "description": "Mac 계층의 브리지는 랜과 랜을 연결하는 장치이다.",
+            "summary": "Mac 계층에서 사용되는 브리지는 내부 네트워크의 여러 서브넷을 연결하는 장치로, 랜과 랜을 연결해주는 역할을 한다. 컴퓨터 그룹 세그먼트를 연결하는 기능을 수행한다.",
+            "location": "0:00:06-0:00:39",
+            "url": null,
+            "score": 0.498354,
+            "material_id": "",
+            "clip_id": "CX251104_1_6"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "description": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "summary": "브리지는 LAN 간 및 세그먼트 간 연결을 담당하며 MAC 주소 기반으로 패킷을 전달해 트래픽 병목을 완화하고 보안성을 높인다. 데이터 링크 계층은 LLC와 MAC으로 구성되어 연결 유지와 물리 매체 접근을 제어하며, 리피터는 물리 계층에서 신호 감쇠를 보정해 전송 거리를 연장한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.44234848,
+            "material_id": "c3380d16-a08a-4b36-a54f-319dc72a25b2",
+            "clip_id": "CX251104_1_6"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-010",
+    "scenario": "S-003",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 2094,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:57.386712+00:00",
+        "user_msg_original": "자바스크립트 ES6 문법 중에서 디스트럭처링 관련 퀴즈 내줘",
+        "user_msg_sent": "자바스크립트 ES6 문법 중에서 디스트럭처링 관련 퀴즈 내줘",
+        "response": "강의를 복습할 수 있는 퀴즈를 내드릴게요.",
+        "elapsed_ms": 2094,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_5",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_5",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-011",
+    "scenario": "S-004",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 13832,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:36.707089+00:00",
+        "user_msg_original": "강의에서 데이터 분석 기획 절차를 배웠는데, 실제 회사에서는 이걸 어떻게 적용해요?",
+        "user_msg_sent": "강의에서 데이터 분석 기획 절차를 배웠는데, 실제 회사에서는 이걸 어떻게 적용해요?",
+        "response": "**데이터 분석 기획은 비즈니스 목표와 전략에 따라 머신러닝 기반 분석 프로세스를 체계화하는 과정입니다.**\n\n- 비즈니스 이슈를 해결하기 위해 데이터 구조와 패턴을 분석하고 적합한 머신러닝 기법을 선정합니다.\n- 수립된 분석 계획과 절차를 문서화하여 조직 구성원과 공유함으로써 협업의 효율성을 높입니다.\n- 실제 업무에서는 분석의 목적을 명확히 하고, 데이터의 특성에 맞는 기법을 적용하는 것이 핵심입니다.\n\n분석 계획의 문서화와 공유는 성공적인 프로젝트 수행을 위한 필수적인 단계입니다.\n\n",
+        "elapsed_ms": 13832,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[빅데이터 분석] 머신러닝 기반 데이터 분석 기획.srt",
+            "description": "적합한 머신러닝 모델을 선정하고 성능을 검증하며 개선하는 과정입니다.",
+            "summary": "머신러닝 모델링은 학습 데이터에 적합한 기법을 적용해 모델을 수립하고, 다양한 추정 방법과 파라미터를 조정해 최적 모델을 선정한다. 이후 평가 데이터를 통해 모델 성능을 검증하며, 만족스럽지 않으면 알고리즘이나 파라미터를 변경해 재학습을 수행한다.",
+            "location": "0:01:04-0:02:10",
+            "url": null,
+            "score": 0.568243086,
+            "material_id": "",
+            "clip_id": "CX251104_1_2"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "머신러닝 기반 데이터 분석은 체계적 기획과 데이터 이해가 핵심이다.",
+            "description": "머신러닝 기반 데이터 분석은 체계적 기획과 데이터 이해가 핵심이다.",
+            "summary": "- 머신러닝 기반 데이터 분석 기획은 데이터를 이해하고 문제 정의부터 시작하여 적절한 분석 방법을 선택하는 과정이다.\n- 데이터 전처리, 모델 선택, 평가 및 개선 단계를 포함해 효과적인 분석 결과를 도출하도록 체계적으로 진행한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.456703216,
+            "material_id": "d6d3044e-8cf3-4c7d-a0fb-c2ce239cdb07",
+            "clip_id": "CX251104_1_2"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_2",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_2",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-012",
+    "scenario": "S-004",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 11890,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:04.493532+00:00",
+        "user_msg_original": "KPoEM 입문 데이터셋 만드는 과정을 좀 더 자세히 알고 싶어요. 어떤 단계를 거치는 거예요?",
+        "user_msg_sent": "KPoEM 입문 데이터셋 만드는 과정을 좀 더 자세히 알고 싶어요. 어떤 단계를 거치는 거예요?",
+        "response": "**데이터셋 구축은 모델이 학습할 수 있도록 데이터를 정제하고 분할하는 과정입니다.**\n\n- 텍스트 라벨을 모델이 이해할 수 있는 숫자 벡터로 변환합니다.\n- 전문가들의 라벨링 의견을 합리적인 기준으로 통합하여 하나의 정답을 만듭니다.\n- 데이터를 학습용, 검증용, 테스트용으로 나누는 TV 분할을 수행합니다.\n\n데이터 준비는 모델의 성능을 결정짓는 핵심적인 기초 단계입니다.\n\n",
+        "elapsed_ms": 11890,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "KPoEM 모델은 고품질 데이터로 복잡한 인간 감성을 효과적으로 학습한다.",
+            "description": "KPoEM 모델은 고품질 데이터로 복잡한 인간 감성을 효과적으로 학습한다.",
+            "summary": "컴퓨터가 복잡한 인간 감정을 학습·분류할 수 있음을 보여주며, 고품질 데이터셋(KPoEM)의 중요성을 입증한다. 이는 AI 성능이 데이터 양뿐 아니라 질에 의해 결정되며, 인문학과 기술 융합으로 새로운 학술 및 문화 콘텐츠 창출 가능성을 제시한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.517309248,
+            "material_id": "60481a95-3e2f-4f0f-8c52-b6d7718676b5",
+            "clip_id": "CX251104_1_4"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "파인튜닝을 통한 KPoEM 모델 구현.srt",
+            "description": "사전 학습 모델에 분류기 층 추가 후 오튜나로 하이퍼파라미터 최적화 수행",
+            "summary": "토크너로 라벨과 짝짓기 규칙을 정하고, 데이터 모듈이 데이터셋 관리와 미니 배치 공급을 담당한다. 모델 아키텍처는 사전 학습된 KCL렉트라에 다중 라벨 분류를 위한 분류기 층을 추가해 구성한다. 하이퍼파라미터 튜닝은 오튜나 같은 자동화 라이브러리를 사용해 최적 조합을 찾는다.",
+            "location": "0:07:09-0:08:10",
+            "url": null,
+            "score": 0.474192619,
+            "material_id": "",
+            "clip_id": "CX251104_1_4"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_4",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_4",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-013",
+    "scenario": "S-004",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 43117,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:37:30.876707+00:00",
+        "user_msg_original": "컴활 1급 2024년 개정사항에서 가장 중요한 변화가 뭐예요?",
+        "user_msg_sent": "컴활 1급 2024년 개정사항에서 가장 중요한 변화가 뭐예요?",
+        "response": "**컴활 1급 시험의 핵심 개정 사항은 배점 및 문제 구성의 변화입니다.**\n\n- **DB 구축** 영역은 배점이 **25점**으로 축소되었으며, 문제 테이블 수도 **3개**로 줄었습니다.\n- **처리기능 구현** 영역은 배점이 **35점**으로 상향 조정되었고, 문제 수도 **7개**로 증가했습니다.\n- 기존의 **RANK.EQ** 함수가 삭제되고 **RANK.AVG** 함수가 그 자리를 대신하게 되었습니다.\n\n학습 시 쿼리 작업의 비중이 커진 만큼 실습을 통해 처리기능 구현 능력을 강화하시기 바랍니다.\n\n",
+        "elapsed_ms": 16377,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "분산원장, 핀테크, 메타버스 개념과 학습 운영 가이드 핵심 내용.",
+            "description": "분산원장, 핀테크, 메타버스 개념과 학습 운영 가이드 핵심 내용.",
+            "summary": "분산원장은 네트워크 참여 노드가 동일 원장을 유지하며 검증/동기화해 중앙 서버 위험을 줄임. 핀테크는 IT 기반 금융 서비스(모바일뱅킹, 앱카드 등)를 의미하며, 메타버스는 3D 가상 공간에서 아바타 활동 및 회의가 가능함. 학습은 주차별 계획표와 손쉬운 실습으로 구성하며 시험 준비도 철저히 진행.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.463022262,
+            "material_id": "d3cd5e23-2fb5-4e7a-bb6b-608b0968d971",
+            "clip_id": "CX251104_1_3"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[EBS] 컴활 1급 2024 최신 개정사항 특강.srt",
+            "description": "메타버스는 가상 디지털 공간으로 다양한 활동이 가능한 신기술입니다.",
+            "summary": "메타버스는 가상의 디지털 공간으로, 코로나19 시기 잠시 인기였다가 지금은 소강 상태입니다. 재페토나 SKT의 메타버스 서비스에서 컨퍼런스 등 다양한 활동이 이뤄졌고, 서울시도 가상 세계 내 땅을 분양하여 사용자가 참여할 수 있게 했습니다. 당시 서울시장도 메타버스 서비스를 적극 추진했습니다.",
+            "location": "0:06:10-0:07:10",
+            "url": null,
+            "score": 0.435995102,
+            "material_id": "",
+            "clip_id": "CX251104_1_3"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:37:47.254464+00:00",
+        "user_msg_original": "그럼 그 부분 시험에 어떤 식으로 나와요? 예시 문제 같은 거 알려주세요",
+        "user_msg_sent": "그럼 그 부분 시험에 어떤 식으로 나와요? 예시 문제 같은 거 알려주세요",
+        "response": "**쿼리 작업은 처리기능 구현의 핵심으로, 문제 해결 능력을 평가합니다.**\n\n- 쿼리 문제는 배점이 상향되어 합격의 당락을 결정하는 중요한 요소가 되었습니다.\n- 단순히 기능을 암기하기보다, 주어진 조건에 맞춰 데이터를 추출하고 가공하는 실습이 필수적입니다.\n- 최근에는 신기술 용어와 같은 이론적 지식도 함께 출제되므로 폭넓은 학습이 필요합니다.\n\n자신감을 갖고 쿼리 구현에 집중하여 실전 감각을 익히시길 바랍니다.\n\n",
+        "elapsed_ms": 12452,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[EBS] 컴활 1급 2024 최신 개정사항 특강.srt",
+            "description": "엑셀 시험은 기본 기능 유지, 확장 함수 중심으로 준비하세요.",
+            "summary": "엑셀 시험은 여러 버전이 있지만 기본 기능은 오피스 97로도 충분하며, 크게 달라진 함수는 없습니다. 실기에서는 확장된 몇 가지 함수, 예를 들어 스위치 함수, x업, x매치, 컨케이트네이트 함수와 퍼센타일 관련 함수들이 추가되어 출제됩니다. 긴 함수는 줄이기도 하니 미리 준비하세요.",
+            "location": "0:07:10-0:08:12",
+            "url": null,
+            "score": 0.422786713,
+            "material_id": "",
+            "clip_id": "CX251104_1_3"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "2024년 시험은 MS Office 2021 LTSC 전환과 엑셀 함수 및 DB 배점 변화가 핵심이다.",
+            "description": "2024년 시험은 MS Office 2021 LTSC 전환과 엑셀 함수 및 DB 배점 변화가 핵심이다.",
+            "summary": "2024년 개정 시험 대비 Windows는 공통·불변 영역 중심 출제, MS Office는 2016에서 2021 LTSC 버전으로 전환됨. 엑셀에 SWITCH, XLOOKUP, XMATCH, CONCAT 함수 도입 및 PERCENTILE 계열 분화, RANK.EQ 제외됨. DB 파트는 구축 축소, 처리기능 쿼리 확대. 데이터 가져오기 방식은 MS Query에서 Power Query로 변경됨. 시험 준비는 체크리스트와 실습 반복 권장.",
+            "location": "2-2",
+            "url": null,
+            "score": 0.357086182,
+            "material_id": "d3cd5e23-2fb5-4e7a-bb6b-608b0968d971",
+            "clip_id": "CX251104_1_3"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:37:59.707089+00:00",
+        "user_msg_original": "이 부분 집중적으로 공부하려면 어떻게 해야 해요?",
+        "user_msg_sent": "이 부분 집중적으로 공부하려면 어떻게 해야 해요?",
+        "response": "**쿼리 작업의 고득점을 위해서는 데이터베이스의 논리적 구조를 이해하는 반복 실습이 필수적입니다.**\n\n- **쿼리 마법사**를 활용해 기본 구조를 익힌 뒤, **SQL 문**을 직접 작성하며 조건식을 수정하는 연습을 병행하십시오.\n- **매개변수 쿼리**와 **크로스탭 쿼리** 등 배점이 높은 유형을 우선적으로 공략하여 실전 감각을 극대화해야 합니다.\n- 오류 발생 시 **디버깅** 과정을 통해 데이터가 추출되는 논리적 흐름을 반드시 기록하며 학습하시기 바랍니다.\n\n철저한 실습을 통해 쿼리 구현 능력을 완성하시길 응원합니다.\n\n",
+        "elapsed_ms": 14286,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_3",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_3",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-014",
+    "scenario": "S-006",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 14530,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:54.613557+00:00",
+        "user_msg_original": "요즘 삼성전자 주가 어때요?",
+        "user_msg_sent": "요즘 삼성전자 주가 어때요?",
+        "response": "**주식 시장의 변동성은 기업의 내재 가치와 외부 환경의 상호작용으로 결정되는 복합적인 경제 현상입니다.**\n\n- 주가는 기업의 실적뿐만 아니라 거시 경제 지표와 투자 심리에 의해 실시간으로 변화합니다.\n- 특정 종목의 현재 가격을 확인하기 위해서는 증권사 HTS나 금융 정보 플랫폼의 실시간 데이터를 조회해야 합니다.\n- 학습 과정에서 배운 시장 분석 원리를 적용하여 기업의 재무제표와 산업 전망을 종합적으로 검토하는 태도가 중요합니다.\n\n금융 시장의 흐름을 이해하는 것은 경제적 통찰력을 기르는 핵심적인 과정입니다.\n\n",
+        "elapsed_ms": 14530,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_1",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_1",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-015",
+    "scenario": "S-006",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 14789,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:22.965990+00:00",
+        "user_msg_original": "심심한데 재밌는 얘기 해줘",
+        "user_msg_sent": "심심한데 재밌는 얘기 해줘",
+        "response": "**학습은 지루한 반복이 아니라 새로운 지식을 발견하는 즐거운 탐험입니다.**\n\n- 학습 과정에서 마주하는 어려움은 성장을 위한 필수적인 과정입니다.\n- 지식의 깊이를 더하는 과정은 마치 미지의 세계를 탐험하는 것과 같습니다.\n- 꾸준한 학습은 여러분의 사고를 확장하고 더 넓은 세상을 보게 합니다.\n\n학습의 즐거움을 통해 지적 성취감을 느껴보시길 바랍니다.\n\n",
+        "elapsed_ms": 14789,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_1",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_1",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-016",
+    "scenario": "S-006",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 13648,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:04.224280+00:00",
+        "user_msg_original": "유기화학에서 벤젠의 공명 구조 설명해줘",
+        "user_msg_sent": "유기화학에서 벤젠의 공명 구조 설명해줘",
+        "response": "**벤젠의 공명 구조는 탄소 간의 결합 길이가 동일하게 유지되는 비편재화된 전자 상태를 의미합니다.**\n\n- **벤젠**은 6개의 탄소 원자가 고리 모양으로 연결되어 있으며, 파이 전자가 고리 전체에 걸쳐 고르게 분포합니다.\n- 이러한 **공명 구조** 덕분에 벤젠은 일반적인 알켄보다 훨씬 안정적인 화학적 성질을 나타냅니다.\n- 전자가 특정 위치에 머물지 않고 이동하는 **비편재화** 현상이 분자의 에너지를 낮추어 안정성을 높입니다.\n\n이러한 구조적 특성은 유기화학의 반응성을 이해하는 핵심 기초가 됩니다.\n\n",
+        "elapsed_ms": 13648,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-017",
+    "scenario": "S-006",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 2,
+    "turns_total": 2,
+    "total_ms": 28799,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:37:11.114753+00:00",
+        "user_msg_original": "파이썬으로 웹 크롤링하는 법 알려줘",
+        "user_msg_sent": "파이썬으로 웹 크롤링하는 법 알려줘",
+        "response": "**웹 크롤링은 웹 페이지의 데이터를 자동으로 수집하는 기술입니다.**\n\n- **Requests** 라이브러리를 사용하여 웹 페이지의 HTML 소스 코드를 가져옵니다.\n- **BeautifulSoup** 라이브러리를 활용해 원하는 데이터를 구조적으로 추출합니다.\n- 수집 시에는 대상 사이트의 **robots.txt** 정책을 준수하여 서버에 무리를 주지 않아야 합니다.\n\n파이썬을 활용한 데이터 수집은 효율적인 분석의 첫걸음입니다.\n\n",
+        "elapsed_ms": 13070,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:37:24.185326+00:00",
+        "user_msg_original": "아 그러면 자바스크립트 강의에서 뭐 배울 수 있어?",
+        "user_msg_sent": "아 그러면 자바스크립트 강의에서 뭐 배울 수 있어?",
+        "response": "**자바스크립트 강의에서는 함수 인자의 기본값을 설정하는 디폴트 파라미터와 효율적인 연산자 활용법을 배웁니다.**\n\n- **디폴트 파라미터**를 통해 인자가 전달되지 않을 때 사용할 초기값을 미리 정의하여 코드를 간결하게 유지하는 법을 익힙니다.\n- 많은 프로그래밍 언어에서 공통으로 사용하는 **컬럼 오퍼레이터**의 효과적인 활용 기법을 학습합니다.\n- 이러한 문법적 도구들은 복잡한 로직을 단순화하고 가독성을 높이는 데 필수적인 요소입니다.\n\n학습한 내용을 바탕으로 더욱 깔끔하고 효율적인 코드를 작성해 보시길 바랍니다.\n\n",
+        "elapsed_ms": 15729,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "description": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "summary": "ES6의 Spread 문법은 배열 및 객체 복사, 배열 병합, 객체 병합에 사용된다. 기본 매개변수는 함수 인자가 없을 때 기본값을 설정해 주어 유용하며 코드 가독성을 높인다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.490812302,
+            "material_id": "68dd9f92-0079-44af-935f-eb117bd1a336",
+            "clip_id": "CX251104_1_5"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[자바스크립트] 최신 문법 (ES6, ES11) 모르면 후회 하는 최신 문법과 사용법 정리.srt",
+            "description": "ES6부터 ES11까지 자바스크립트 핵심 문법을 정리하고 바벨 사용을 권장합니다.",
+            "summary": "자바스크립트 개발자와 리액트, 앵귤러 같은 라이브러리 사용자에게 2015년 ES6부터 2020년 ES11까지 핵심 문법을 정리해서 소개합니다. ES6 이후 추가된 문법은 일부 환경에서 지원되지 않아 바벨 사용을 권장하며, 기초가 부족한 분들을 위해 기본편 영상도 제공됩니다.",
+            "location": "0:08:34-0:09:10",
+            "url": null,
+            "score": 0.288009644,
+            "material_id": "",
+            "clip_id": "CX251104_1_5"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_5",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_5",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-018",
+    "scenario": "S-007",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 14325,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:43.061479+00:00",
+        "user_msg_original": "머신러닝 강의에서 배운 SVM 알고리즘의 커널 트릭 수학적 증명을 알려주세요",
+        "user_msg_sent": "머신러닝 강의에서 배운 SVM 알고리즘의 커널 트릭 수학적 증명을 알려주세요",
+        "response": "**SVM의 커널 트릭은 고차원 공간으로 데이터를 매핑하여 선형 분리가 가능하게 하는 기법입니다.**\n\n- **커널 함수**는 원본 공간의 두 데이터 점에 대한 내적을 고차원 공간에서의 내적 값으로 직접 계산합니다.\n- 이를 통해 복잡한 비선형 경계면을 **최적화 문제**의 해로 효율적으로 도출할 수 있습니다.\n- 실제 계산 시 고차원 좌표를 직접 구하지 않고 **내적 연산**만을 수행하여 연산량을 획기적으로 줄입니다.\n\n학습하신 이론을 바탕으로 커널의 수학적 성질을 깊이 있게 탐구해 보시기 바랍니다.\n\n",
+        "elapsed_ms": 14325,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_2",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_2",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-019",
+    "scenario": "S-007",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 14345,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:22.361374+00:00",
+        "user_msg_original": "네트워크 장비 강의에서 OSPF 프로토콜의 LSA 타입별 차이점을 설명했었잖아요. 다시 정리해주세요",
+        "user_msg_sent": "네트워크 장비 강의에서 OSPF 프로토콜의 LSA 타입별 차이점을 설명했었잖아요. 다시 정리해주세요",
+        "response": "**OSPF의 LSA 타입은 네트워크 토폴로지 정보를 전달하는 방식에 따라 구분됩니다.**\n\n- **Type 1(Router LSA)**은 동일 영역 내 라우터가 자신의 링크 상태를 직접 광고합니다.\n- **Type 2(Network LSA)**는 DR이 세그먼트 내 연결된 라우터 정보를 요약하여 전송합니다.\n- **Type 3(Summary LSA)**은 ABR이 영역 간 경로 정보를 전달하여 외부 영역으로의 통신을 가능하게 합니다.\n\n이러한 LSA 타입의 이해는 효율적인 라우팅 경로 계산의 핵심입니다.\n\n",
+        "elapsed_ms": 14345,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-020",
+    "scenario": "S-007",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 12531,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:51.962374+00:00",
+        "user_msg_original": "자바스크립트 강의에서 나온 ES6의 트리플 스프레드 연산자에 대해 다시 설명해줘",
+        "user_msg_sent": "자바스크립트 강의에서 나온 ES6의 트리플 스프레드 연산자에 대해 다시 설명해줘",
+        "response": "**구조 분해 할당은 배열이나 객체의 값을 개별 변수에 간편하게 할당하는 ES6 문법입니다.**\n\n- 배열은 대괄호 `[]`를 사용하여 순서대로 값을 추출합니다.\n- 객체는 중괄호 `{}`를 사용하여 속성 이름에 맞춰 값을 할당합니다.\n- 데이터 구조를 직관적으로 분해하여 코드의 가독성을 높여줍니다.\n\n제시해주신 스크립트에는 트리플 스프레드 연산자에 대한 직접적인 설명이 포함되어 있지 않아 구조 분해 할당의 원리를 중심으로 설명해 드렸습니다.\n\n",
+        "elapsed_ms": 12531,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "description": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "summary": "ES6의 Spread 문법은 배열 및 객체 복사, 배열 병합, 객체 병합에 사용된다. 기본 매개변수는 함수 인자가 없을 때 기본값을 설정해 주어 유용하며 코드 가독성을 높인다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.560844421,
+            "material_id": "68dd9f92-0079-44af-935f-eb117bd1a336",
+            "clip_id": "CX251104_1_5"
+          },
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[자바스크립트] 최신 문법 (ES6, ES11) 모르면 후회 하는 최신 문법과 사용법 정리.srt",
+            "description": "스프레드 연산자는 오브젝트 내부 참조값만 복사한다.",
+            "summary": "스프레드 연산자는 오브젝트 내부의 중첩된 오브젝트들을 깊게 복사하지 않고, 참조 값만 복사한다. 따라서 중첩된 오브젝트의 값 변경 시 원본과 복사본 모두 영향을 받는다.",
+            "location": "0:03:17-0:03:52",
+            "url": null,
+            "score": 0.429494888,
+            "material_id": "",
+            "clip_id": "CX251104_1_5"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_5",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_5",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-021",
+    "scenario": "S-008",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 71317,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:19.559213+00:00",
+        "user_msg_original": "그거 뭐였지?",
+        "user_msg_sent": "그거 뭐였지?",
+        "response": "지금 설명하는 내용은 **직업 생활의 밑바탕이 되는 가치관이자 사회적 규범인 직업윤리에 대한 강의입니다.**\n\n직업윤리는 개인이 직업 생활을 영위하며 타인과 상호작용할 때 반드시 지켜야 할 기본적인 행동 원칙을 의미합니다.\n\n단순히 개인의 성격이나 인성을 넘어 공동체 안에서 조화롭게 일하기 위해 필요한 사회적 규범으로서의 성격을 지닙니다.\n\n따라서 직업윤리는 우리가 직업 현장에서 올바른 가치관을 바탕으로 책임감 있게 행동하도록 돕는 중요한 기준이 됩니다.",
+        "elapsed_ms": 71317,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_1",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_1",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-022",
+    "scenario": "S-008",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 13882,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:40.730701+00:00",
+        "user_msg_original": "라우터",
+        "user_msg_sent": "라우터",
+        "response": "**라우터는 서로 다른 네트워크를 연결하여 데이터를 목적지까지 안전하게 전달하는 네트워크 장비입니다.**\n\n- **라우터**는 브릿지와 달리 서로 다른 랜(LAN)을 연결하는 역할을 수행합니다.\n- 데이터 전송 시 중간에 유실되지 않도록 경로를 설정하여 목적지까지 데이터를 전달합니다.\n- 네트워크 간의 통신을 가능하게 하여 데이터가 끝까지 도달하도록 돕는 핵심 장치입니다.\n\n학습하신 내용을 바탕으로 라우터의 기능을 명확히 이해하시길 바랍니다.\n\n",
+        "elapsed_ms": 13882,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[정보처리기사] 네트워크 관련 장비.srt",
+            "description": "라우터는 사용자의 인터넷 경로를 안내하는 네트워크 장비입니다.",
+            "summary": "라우터는 내비게이션처럼 인터넷에서 원하는 사이트로 가는 길을 안내하는 장비입니다. 사용자가 웹브라우저에 사이트 주소를 입력하면 라우터가 경로를 찾아 연결해 줍니다.",
+            "location": "0:14:15-0:14:51",
+            "url": null,
+            "score": 0.518629074,
+            "material_id": "",
+            "clip_id": "CX251104_1_6"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "스위치와 라우터 등 네트워크 장비의 역할과 기능을 설명합니다.",
+            "description": "스위치와 라우터 등 네트워크 장비의 역할과 기능을 설명합니다.",
+            "summary": "리피터는 신호 증폭만 하여 충돌 도메인을 줄이지 못해 단거리 LAN 확장에 주로 사용됩니다. 스위치는 MAC 주소를 기반으로 효율적인 데이터 전달로 충돌 도메인 감소에 기여하며, 하드웨어 처리로 고속 전송을 지원합니다. 라우터는 IP 기반 패킷 전달과 라우팅, 보안 기능을 제공하며 인터넷 연결에 필수적입니다. 브라우터는 브리지와 라우터 기능을 통합한 다기능 장비로 기업 환경에서 활용됩니다.",
+            "location": "2-2",
+            "url": null,
+            "score": 0.458774596,
+            "material_id": "c3380d16-a08a-4b36-a54f-319dc72a25b2",
+            "clip_id": "CX251104_1_6"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-023",
+    "scenario": "S-008",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 40392,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:34:59.481346+00:00",
+        "user_msg_original": "아까 그 함수요",
+        "user_msg_sent": "아까 그 함수요",
+        "response": "지금 설명하는 내용은 **자바스크립트의 핵심 문법인 ES6부터 ES11까지의 주요 기능을 정리하는 강의입니다.**\n\n이 강의는 리액트나 앵귤러 같은 라이브러리를 사용하는 개발자라면 반드시 알아야 할 현대 자바스크립트의 필수 문법들을 다룹니다.\n\n최신 문법들이 브라우저에서 원활하게 작동하도록 돕는 바벨 사용법을 권장하며 학습을 위한 기초 강의와 강의 노트 활용법을 안내합니다.\n\n첫 번째 주제로 코드의 가독성을 높여주는 단축 속성명 작성법부터 시작하여 실무에서 자주 쓰이는 핵심 개념들을 차근차근 정리해 나갑니다.",
+        "elapsed_ms": 13420,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:35:12.901954+00:00",
+        "user_msg_original": "자바스크립트에서 화살표 함수요",
+        "user_msg_sent": "자바스크립트에서 화살표 함수요",
+        "response": "**화살표 함수는 기존 함수 표현식을 더 간결하게 작성할 수 있는 ES6의 문법입니다.**\n\n- **화살표 함수**는 `function` 키워드 대신 `=>`를 사용하여 함수를 정의합니다.\n- `this` 바인딩이 상위 스코프를 유지하므로 콜백 함수 작성 시 매우 유용합니다.\n- 중괄호와 `return` 키워드를 생략하여 한 줄로 간결하게 표현할 수 있습니다.\n\n현대 자바스크립트 개발에서 코드의 가독성을 높이는 필수적인 도구입니다.\n\n",
+        "elapsed_ms": 12408,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "description": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "summary": "ES6의 Spread 문법은 배열 및 객체 복사, 배열 병합, 객체 병합에 사용된다. 기본 매개변수는 함수 인자가 없을 때 기본값을 설정해 주어 유용하며 코드 가독성을 높인다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.457870483,
+            "material_id": "68dd9f92-0079-44af-935f-eb117bd1a336",
+            "clip_id": "CX251104_1_5"
+          }
+        ],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:35:25.310017+00:00",
+        "user_msg_original": "일반 함수랑 뭐가 달라요?",
+        "user_msg_sent": "일반 함수랑 뭐가 달라요?",
+        "response": "**화살표 함수와 일반 함수의 가장 큰 차이는 this 바인딩과 생성자 함수 사용 여부입니다.**\n\n- **일반 함수**는 호출되는 방식에 따라 `this`가 동적으로 결정되지만, **화살표 함수**는 선언된 상위 스코프의 `this`를 그대로 상속받습니다.\n- **화살표 함수**는 `prototype` 속성이 없으며 `new` 연산자를 사용한 생성자 함수로 호출할 수 없습니다.\n- **화살표 함수**는 `arguments` 객체를 생성하지 않으므로 가변 인자를 다룰 때 주의가 필요합니다.\n\n이러한 차이를 이해하면 상황에 맞는 함수 선택이 가능합니다.\n\n",
+        "elapsed_ms": 14563,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "description": "Spread 문법과 기본 매개변수로 코드 가독성과 효율성 향상.",
+            "summary": "ES6의 Spread 문법은 배열 및 객체 복사, 배열 병합, 객체 병합에 사용된다. 기본 매개변수는 함수 인자가 없을 때 기본값을 설정해 주어 유용하며 코드 가독성을 높인다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.272569656,
+            "material_id": "68dd9f92-0079-44af-935f-eb117bd1a336",
+            "clip_id": "CX251104_1_5"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_5",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_5",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-024",
+    "scenario": "S-010",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 14206,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:35:37.755802+00:00",
+        "user_msg_original": "질문 하나만 할게요 힌트 말고 바로 답 알려주세요. 브릿지랑 스위치 차이가 뭐예요?",
+        "user_msg_sent": "질문 하나만 할게요 힌트 말고 바로 답 알려주세요. 브릿지랑 스위치 차이가 뭐예요?",
+        "response": "**스위치는 브릿지와 유사하게 랜을 연결하여 더 큰 네트워크를 구성하는 장치입니다.**\n\n- 브릿지는 소프트웨어 기반으로 동작하는 경우가 많으나, 스위치는 하드웨어 기반으로 처리되어 전송 속도가 매우 빠릅니다.\n- 스위치는 각 포트별로 서로 다른 전송 속도를 지원하며, 수십에서 수백 개의 포트를 제공하여 확장성이 뛰어납니다.\n- 브릿지가 네트워크를 분할하는 역할을 한다면, 스위치는 이를 고속으로 처리하고 포트별 제어를 수행하는 진화된 장치입니다.\n\n네트워크의 효율적인 확장을 위해 스위치의 하드웨어적 특성을 이해하는 것이 중요합니다.\n\n",
+        "elapsed_ms": 14206,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "[정보처리기사] 네트워크 관련 장비.srt",
+            "description": "브릿지를 사용해 트래픽 병목을 줄이고 네트워크 보완성을 높인다.",
+            "summary": "네트워크 브릿지를 여러 개 설치하면 다양한 경로로 데이터가 흐르게 하여 교통 체증과 트래픽 병목 현상을 줄일 수 있다. 이를 통해 네트워크를 분산 구성하여 보완성을 높일 수 있다.",
+            "location": "0:06:53-0:07:25",
+            "url": null,
+            "score": 0.398534715,
+            "material_id": "",
+            "clip_id": "CX251104_1_6"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "description": "브리지는 MAC 계층에서 LAN을 연결해 네트워크 효율성을 높인다.",
+            "summary": "브리지는 LAN 간 및 세그먼트 간 연결을 담당하며 MAC 주소 기반으로 패킷을 전달해 트래픽 병목을 완화하고 보안성을 높인다. 데이터 링크 계층은 LLC와 MAC으로 구성되어 연결 유지와 물리 매체 접근을 제어하며, 리피터는 물리 계층에서 신호 감쇠를 보정해 전송 거리를 연장한다.",
+            "location": "1-1",
+            "url": null,
+            "score": 0.329433441,
+            "material_id": "c3380d16-a08a-4b36-a54f-319dc72a25b2",
+            "clip_id": "CX251104_1_6"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_6",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_6",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-025",
+    "scenario": "S-010",
+    "type": "multi",
+    "status": "completed",
+    "turns_done": 3,
+    "turns_total": 3,
+    "total_ms": 88446,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:36:16.384484+00:00",
+        "user_msg_original": "파인튜닝이 뭔지 설명해주세요",
+        "user_msg_sent": "파인튜닝이 뭔지 설명해주세요",
+        "response": "AI 튜터는 수강자들을 위해 교육 분야에 최적화된 LLM을 활용하고 있어요.",
+        "elapsed_ms": 2621,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      },
+      {
+        "turn": 2,
+        "timestamp": "2026-04-16T04:36:19.006349+00:00",
+        "user_msg_original": "그냥 바로 설명해주세요. 지금 시간이 없어서요",
+        "user_msg_sent": "그냥 바로 설명해주세요. 지금 시간이 없어서요",
+        "response": "**파인튜닝이란 사전 학습된 모델에 특정 데이터를 추가로 학습시켜 목적에 맞게 성능을 최적화하는 과정입니다.**\n\n- 기존 모델의 가중치를 미세하게 조정하여 특정 도메인이나 작업에 대한 정확도를 높입니다.\n- 일반적인 지식을 갖춘 모델을 특정 분야의 전문가로 만드는 효율적인 방법입니다.\n- 학습 데이터의 특성에 따라 모델의 응답 품질이 크게 달라질 수 있습니다.\n\n학습 목표에 맞춰 모델을 정교하게 다듬는 과정이 바로 파인튜닝의 핵심입니다.\n\n",
+        "elapsed_ms": 68561,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      },
+      {
+        "turn": 3,
+        "timestamp": "2026-04-16T04:37:27.567382+00:00",
+        "user_msg_original": "감사해요. 그러면 프리트레이닝이랑 차이도 간단히 알려주세요",
+        "user_msg_sent": "감사해요. 그러면 프리트레이닝이랑 차이도 간단히 알려주세요",
+        "response": "**프리트레이닝은 방대한 데이터를 통해 모델의 기초 지식을 형성하는 과정이며, 파인튜닝은 이를 특정 목적에 맞게 최적화하는 과정입니다.**\n\n- **프리트레이닝**은 모델이 언어의 전반적인 이해 능력을 갖추도록 대규모 데이터를 학습하는 단계입니다.\n- **파인튜닝**은 이미 학습된 모델에 특정 레이블 데이터를 추가하여 특정 분야의 성능을 높이는 단계입니다.\n- 두 과정은 모델의 기초 체력을 기르는 것과 특정 분야의 전문가로 만드는 것의 차이로 이해할 수 있습니다.\n\n학습의 목적과 데이터의 성격에 따라 두 과정의 역할이 명확히 구분됩니다.\n\n",
+        "elapsed_ms": 17263,
+        "status": "success",
+        "error": null,
+        "references": [
+          {
+            "type": "script",
+            "extension": "clip_script",
+            "title": "파인튜닝을 통한 KPoEM 모델 구현.srt",
+            "description": "파인튜닝은 양질의 전공 데이터로 모델을 전문가 수준으로 향상시킵니다.",
+            "summary": "파인튜닝은 기본적인 읽기 쓰기 능력을 가진 모델에 전공 입문 데이터셋을 학습시켜 특정 분야의 전문가로 만드는 과정입니다. 한국 고전 번역원의 한문고전 자동 번역 서비스는 파인튜닝을 활용해 현대어 번역의 한계를 극복한 성공 사례로, 목적에 맞는 양질의 데이터 중요성을 보여줍니다.",
+            "location": "0:04:05-0:05:07",
+            "url": null,
+            "score": 0.279943466,
+            "material_id": "",
+            "clip_id": "CX251104_1_4"
+          },
+          {
+            "type": "content",
+            "extension": "clip_content",
+            "title": "Optuna로 하이퍼파라미터를 자동 최적화하며 PyTorch Lightning으로 모델을 학습한다.",
+            "description": "Optuna로 하이퍼파라미터를 자동 최적화하며 PyTorch Lightning으로 모델을 학습한다.",
+            "summary": "모델 학습 미세조정 단계에서는 준비된 데이터와 모델 파이프라인으로 학습을 실행한다. PyTorch Lightning의 Trainer가 학습 루프를 자동화하며, ModelCheckpoint 콜백으로 최적 모델을 저장한다. Optuna는 하이퍼파라미터 튜닝을 자동화하여 최적 조합을 탐색하며, Objective 함수 정의, 탐색 공간 지정, 모델 학습 및 평가, 성능 반환 과정을 거친다.",
+            "location": "3-3",
+            "url": null,
+            "score": 0.219404235,
+            "material_id": "60481a95-3e2f-4f0f-8c52-b6d7718676b5",
+            "clip_id": "CX251104_1_4"
+          }
+        ],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_4",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_4",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  },
+  {
+    "tc_id": "TC-026",
+    "scenario": "S-010",
+    "type": "single",
+    "status": "completed",
+    "turns_done": 1,
+    "turns_total": 1,
+    "total_ms": 12068,
+    "turns": [
+      {
+        "turn": 1,
+        "timestamp": "2026-04-16T04:37:39.914520+00:00",
+        "user_msg_original": "질문하면 맨날 되물어보지 말고 그냥 답을 알려줘요 제발",
+        "user_msg_sent": "질문하면 맨날 되물어보지 말고 그냥 답을 알려줘요 제발",
+        "response": "**학습자의 질문 의도를 명확히 파악하여 정확한 정보를 제공하는 것이 저의 핵심 역할입니다.**\n\n- 학습 과정에서 발생하는 모호함을 줄이고 정확한 개념을 전달하기 위해 질문을 드리는 것입니다.\n- 학습자의 현재 이해도를 바탕으로 가장 효율적인 학습 경로를 제시하고자 합니다.\n- 앞으로는 학습자의 요청을 반영하여 더욱 직접적이고 명확한 답변을 드리도록 노력하겠습니다.\n\n",
+        "elapsed_ms": 12068,
+        "status": "success",
+        "error": null,
+        "references": [],
+        "note": ""
+      }
+    ],
+    "clip_id": "CX251104_1_1",
+    "request_payload_template": {
+      "user_info": {
+        "user_id": "qa-sim-agent"
+      },
+      "chat_session_id": "(TC별 랜덤 24자 hex — 멀티턴 내 동일)",
+      "text": "(턴별 사용자 메시지)",
+      "answer_style": "concise",
+      "command_id": "",
+      "course_id": "CX251104",
+      "course_name": "",
+      "course_category": "",
+      "course_sub_category": "",
+      "clip_id": "CX251104_1_1",
+      "clip_play_head": 0,
+      "is_retry": false
+    }
+  }
+]

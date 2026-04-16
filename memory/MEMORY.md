@@ -5,17 +5,17 @@
 
 ## 프로젝트 현황
 
-- 상태: Learn + Generate + Run + Evaluate 단계 구현 완료 (파이프라인 5단계 전체 완성)
-- QA 대상 챗봇: 미정
+- 상태: 파이프라인 5단계 전체 구현 완료. **에듀탭 QA 진행 중 — Learn 완료**
+- QA 대상 챗봇: **에듀탭 (edutap.ai)** — 온라인 강의 플랫폼 1:1 AI 튜터 챗봇 (콕스웨이브)
 - 구현 완료: scaffold 구조, CLAUDE.md, `/learn-context`, `/generate-scenarios`, `/generate-testcases`, `/run-simulation`, `/evaluate-results` skills
-- 최근 변경: `/evaluate-results` 스킬 신규 구현 — LLM-as-judge 방식으로 시뮬레이션 결과를 TC 평가 기준에 따라 Pass/Partial/Fail 판정. 공통 평가 기준(PM 추가), 엄격도 3단계(관대/보통/엄격), summary.md 종합 큐레이션(강점/약점/패턴/권고) 포함. 기존 tc-*.md 인플레이스 교체 방식
+- 최근 변경: `/evaluate-results` 실행 — Pass 10 (38%), Partial 11 (42%), Fail 5 (19%). 소크라테스식 미작동, 범위 밖 경계 처리 실패, 할루시네이션 방지 실패가 핵심 약점
 - 미구현: 서브에이전트 (TC 리뷰 등)
+- 테스트 대상 강의: CX251104 (IT/SW 및 직업 역량 마스터 과정, 6개 클립)
 
 ## 다음 세션 할 일
 
-- 서브에이전트 구성 (TC 리뷰 등)
-- (낮음) 웹 리서치 전용 서브에이전트 정의
-- (낮음) Build → Production 전환 작업
+- PM에게 평가 결과 기반 후속 조치 논의 (소크라테스식 프롬프트 점검, 범위 밖 가드레일, 할루시네이션 방지)
+- (낮음) 서브에이전트 구성 (TC 리뷰 등)
 
 ## 핵심 교훈
 

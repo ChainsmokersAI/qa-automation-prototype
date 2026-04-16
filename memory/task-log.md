@@ -2,6 +2,78 @@
 
 <!-- 최신 작업이 위로 오도록 기록 -->
 
+## [2026-04-16] `/evaluate-results` 실행 — 에듀탭
+
+- **요청**: PM — "진행해줘" (run-simulation 완료 후 연속 실행)
+- **평가 설정**: 대상 sim-20260416-162300 전체 26 TC, 엄격도 보통, 공통 기준 Relevancy+Faithfulness
+- **결과**: Pass 10 (38%), Partial 11 (42%), Fail 5 (19%)
+  - **Pass (10)**: TC-001, 003, 004, 008~013, 024 — 개념 질문, 퀴즈, 심화, 직접 답변 요구
+  - **Partial (11)**: TC-005~007, 015, 017, 020~023, 025~026 — 소크라테스식 미적용, 모호 질문 명확화 부재
+  - **Fail (5)**: TC-002, 014, 016, 018, 019 — 질문 오인, 범위 밖 답변, 할루시네이션
+- **핵심 발견**:
+  - 소크라테스식 학습 유도(S-002) 전혀 미작동 — 3개 TC 모두 직접 답변
+  - 범위 밖 질문(S-006) 경계 처리 실패 — 유기화학, 주가, 웹 크롤링에 외부 지식으로 답변
+  - 할루시네이션(S-007) 방지 실패 — SVM, OSPF 강의에 없는 내용 자신 있게 설명
+  - "답변 생성 우선" 경향 — 모호/범위밖/소크라테스 모두에서 일단 답변 생성 패턴
+- **교훈**: 별도 기록 없음
+
+## [2026-04-16] `/run-simulation` 실행 — 에듀탭
+
+- **요청**: PM — "진행해줘" (generate-testcases 완료 후 연속 실행)
+- **API Spec 수집**: PM이 Tech Lead 제공 cURL 예시로 전달. OpenAPI JSON(https://tapapistaging.coxwave.link/openapi.json)도 확인하여 전체 API 구조 파악
+- **결과**: `outputs/simulations/sim-20260416-162300/` — 26개 TC 전체 completed
+  - completed: 26, partial: 0, error: 0, skipped: 0
+  - 총 실행 턴: 41 (싱글턴 17 + 멀티턴 9 TC의 24턴)
+  - TC flow 이탈: 0 (모든 멀티턴 TC에서 원본 메시지 그대로 전송)
+- **호출 스크립트**: `outputs/scripts/edutap-api-client.py` 신규 생성 (httpx async, SSE 파싱, 병렬 실행 semaphore, 지수 백오프 재시도)
+- **주요 결정**: 동시 실행 수 3, 멀티턴은 re-anchor 없이 원본 메시지 그대로 전송 (응답이 자연스럽게 이어졌으므로)
+- **교훈**: 별도 기록 없음
+
+## [2026-04-16] `/generate-testcases` 실행 — 에듀탭
+
+- **요청**: PM — "진행해줘" (generate-scenarios 완료 후 연속 실행)
+- **Step 1 확정값**: 대상 전체(8개 시나리오), TC 개수 중(3~5개), Turn 수 기본 싱글턴 + 멀티턴 혼합
+- **PM 특별 지시**: "기본적으로 Single-Turn으로 하되, Multi-Turn 케이스도 몇 개 생성. 실제 학생들이 할 법한 질문"
+- **결과**: `outputs/testcases/` 8개 파일, 총 26개 TC (싱글턴 17 + 멀티턴 9)
+  - s-001: 4 TC (개념 질문 — 브릿지, 머신러닝 절차, ES6, 파인튜닝 멀티턴)
+  - s-002: 3 TC (소크라테스식 — 직업윤리 멀티턴, 네트워크 장비, 데이터 분석 멀티턴)
+  - s-003: 3 TC (복습 퀴즈 — 전체 퀴즈, 오답 피드백 멀티턴, 특정 토픽 퀴즈)
+  - s-004: 3 TC (심화 학습 — 머신러닝 실무, KPoEM 데이터셋, 컴활 개정 멀티턴)
+  - s-006: 4 TC (범위 밖 — 시사, 잡담, 타 도메인, 복귀 멀티턴)
+  - s-007: 3 TC (할루시네이션 — 세부사항, 잘못된 전제, 존재하지 않는 개념)
+  - s-008: 3 TC (모호한 질문 — 대명사, 단어, 명확화 멀티턴)
+  - s-010: 3 TC (직접 답변 요구 — 처음부터, 소크라테스 후, 반복 불만)
+- **PM 피드백**: 수정 없이 승인
+- **교훈**: 별도 기록 없음
+
+## [2026-04-16] `/generate-scenarios` 실행 — 에듀탭
+
+- **요청**: PM — "진행해줘" (learn-context 완료 후 연속 실행)
+- **입력**: context/ 8개 파일 (chatbot-identity, target-users, core-capabilities, user-flows, out-of-scope, issues, api-spec, course-data)
+- **결과**: `outputs/scenarios/edutap-scenarios.md` — 8개 시나리오 생성
+  - Happy Path 4개: S-001 개념 질문-답변(상), S-002 소크라테스식 학습 유도(상), S-003 복습 퀴즈(상), S-004 심화 학습(중)
+  - Edge Case 4개: S-006 범위 밖 질문(상), S-007 할루시네이션 유도(상), S-008 모호한 질문(중), S-010 직접 답변 요구(중)
+- **PM 피드백**: S-005(강의 간 교차 질문), S-009(SRT 자막 오류 영향) 제외 → 10개 → 8개
+- **교훈**: 별도 기록 없음
+
+## [2026-04-16] `/learn-context` 실행 — 에듀탭 (edutap.ai)
+
+- **요청**: PM — "챗봇 테스트하고 싶어" (자동 트리거 규칙에 따라 즉시 `/learn-context` 호출)
+- **입력 수집**:
+  - Step 1a: 서비스명(에듀탭), 소개(온라인 강의 플랫폼 1:1 튜터 챗봇)
+  - Step 1b: URL(https://edutap.ai/), 강의 자료(CX251104.zip — PDF+SRT 6개 강의 + 강의 정보 JSON)
+  - Step 1c: PM "없음" 확인
+- **웹 리서치**:
+  - Phase 1 (정체성): edutap.ai, ZDNet 기사, HelloT 기사 (3 소스)
+  - Phase 2 (사용자/기능): 에듀탭 사용 후기 검색 (직접 후기 미발견, 보도자료 재활용)
+  - Phase 3 (흐름/한계/이슈): AI 튜터 챗봇 일반 한계·할루시네이션 검색, AI 튜터 대화 흐름 검색
+- **결과**: context/ 8개 파일 생성
+  - chatbot-identity.md, target-users.md, core-capabilities.md, user-flows.md, out-of-scope.md, issues.md, api-spec.md(미수집), course-data.md
+  - context/index.md에 @import 등록
+  - inputs/pm-notes-20260416.md 생성, inputs/index.md 갱신
+- **주요 결정**: PM이 가안을 수정 없이 승인 → 그대로 context/ 파일화
+- **교훈**: 별도 기록 없음
+
 ## [2026-04-16] `/evaluate-results` 스킬 신규 구현
 
 - **요청**: PM — 시뮬레이션 결과를 평가하는 5단계 스킬 작성
